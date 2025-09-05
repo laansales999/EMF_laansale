@@ -25,14 +25,13 @@
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             --platinum: #e5e4e2;
             --deep-navy: #0a1a2f;
-            --emf-blue: #1a4b8c;
         }
         
         body {
             background: linear-gradient(135deg, var(--deep-navy) 0%, #1e3a8a 100%);
             color: var(--light-text);
             line-height: 1.6;
-            padding-top: 70px;
+            padding-top: 70px; /* Space for fixed header */
             padding-bottom: 80px;
         }
         
@@ -41,7 +40,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            position: relative;
         }
         
         /* Modern Header Styles */
@@ -142,7 +140,7 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.7);
-            z-index: 10000;
+            z-index: 10001; /* kept lower than floating cart/toggle buttons */
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -163,6 +161,105 @@
             letter-spacing: 1px;
         }
         
+        /* Footer Styles */
+        footer {
+            background: var(--dark-blue);
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 2px solid var(--gold);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .footer-about {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .footer-about h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-about p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .footer-contact {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-contact h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Location Prompt Section */
+        .location-prompt {
+            background: rgba(14, 165, 233, 0.15);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .location-prompt h2 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, var(--gold), #d97706);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #d97706, var(--gold));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+        
         /* Event Section */
         .event-section {
             display: flex;
@@ -177,7 +274,7 @@
             min-width: 300px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 极狐0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             position: relative;
         }
         
@@ -217,7 +314,7 @@
         }
         
         .exclusive-tag {
-            background: linear-gradient(135极狐deg, var(--gold), #ef4444);
+            background: linear-gradient(135deg, var(--gold), #ef4444);
             color: white;
             padding: 8px 20px;
             border-radius: 20px;
@@ -225,7 +322,7 @@
             font-weight: 600;
             display: inline-block;
             margin-bottom: 20px;
-            letter-spacing: 极狐1px;
+            letter-spacing: 1px;
         }
         
         /* EMF Poster Section */
@@ -245,30 +342,19 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         
-        /* Drink Sizes Section */
-        .drink-sizes {
+        .special-offer {
+            background: linear-gradient(135deg, var(--gold), #ef4444);
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            margin: 50px 0;
-            padding: 30px;
-            background: var(--light-bg);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
         }
         
-        .drink-s极狐izes h3 {
-            color: var(--platinum);
-            margin-bottom: 25px;
-            font-size: 28px;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .drink-sizes img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            height: 200px;
-            object-fit: cover;
+        .special-offer h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
         
         /* Menu Section */
@@ -314,11 +400,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5极狐px;
+            height: 5px;
             background: linear-gradient(90deg, var(--gold), var(--primary-blue));
         }
         
-极狐        .menu-item:hover {
+        .menu-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
@@ -410,7 +496,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-极狐       }
+        }
         
         .quantity-btn:hover {
             background: var(--gold);
@@ -434,56 +520,133 @@
             margin-top: 10px;
         }
         
-        /* Order Log - Fixed Positioning Issue */
-        .order-log {
-            position: sticky;
-            top: 100px;
-            float: right;
-            width: 300px;
+        /* Drink Sizes Section */
+        .drink-sizes {
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .drink-sizes h3 {
+            color: var(--platinum);
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .drink-sizes img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Floating Cart */
+        .floating-cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
             background: var(--light-bg);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 20px;
+            width: 350px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            z-index: 999;
+            z-index: 11000; /* bumped so it sits above overlay/header when needed */
             max-height: 400px;
             overflow-y: auto;
-            margin-left: 30px;
-            margin-bottom: 30px;
+            display: none;
         }
         
-        .order-log h3 {
-            color: var(--platinum);
-            margin-bottom: 15px;
-            font-family: 'Playfair Display', serif;
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 10px;
-        }
-        
-        .order-items {
-            margin-bottom: 15px;
-        }
-        
-        .order-item {
+        .cart-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            align-items: center;
+            margin-bottom: 15px;
             padding-bottom: 10px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .order-total {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            font-size: 18px;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 2px solid var(--gold);
+        .cart-header h3 {
+            color: var(--platinum);
+            font-family: 'Playfair Display', serif;
         }
         
-        /* Checkout Form */
+        .cart-items {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+        }
+        
+        .cart-item-info {
+            flex: 2;
+        }
+        
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .remove-btn {
+            color: #ef4444;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .remove-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 20px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--platinum);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        
         .checkout-form {
             background: var(--light-bg);
             border-radius: 10px;
@@ -531,147 +694,90 @@
             box-shadow: 0 0 0 2px rgba(12, 77, 162, 0.3);
         }
         
-        /* Footer Styles */
-        footer {
-            background: var(--emf-blue);
-            padding: 60px 0 20px;
-            margin-top: 60px;
-            border-top: 2px solid var(--gold);
+        .payment-info {
+            background: rgba(14, 165, 233, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary-blue);
         }
         
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-brand, .footer-about, .footer-partner {
-            padding: 0 20px;
-        }
-        
-        .footer-brand img {
-            height: 60px;
-            margin-bottom: 15px;
-        }
-        
-        .footer-brand p {
-            color: var(--platinum);
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .footer-about h3, .footer-partner h3 {
+        .payment-info h4 {
             color: var(--gold);
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+            font-size: 20px;
         }
         
-        .footer-about p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .footer-partner a {
-            display: inline-block;
-            background: var(--gold);
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #25D366;
             color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-极狐           text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-partner a:hover {
-            background: #d97706;
-            transform: translateY(-3px);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
+            font-size: 28px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 11000; /* bumped above overlay */
             transition: all 0.3s ease;
         }
         
-        .social-icons a:hover {
+        .whatsapp-chat:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+        
+        .cart-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
             background: var(--gold);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Buttons */
-        .btn {
-            background: linear-gradient(135deg, var(--gold), #d97706);
             color: white;
-            border: none;
-            padding: 14px 30px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-top: 15px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
-            text-decoration: none;
-        }
-        
-        .btn:hover {
-            background: linear-gradient(135deg, #d97706, var(--gold));
-            transform: translateY(-3px);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
             box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-        }
-        
-        .checkout-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
+            z-index: 11000; /* bumped above overlay */
             transition: all 0.3s ease;
-            margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            cursor: pointer;
         }
         
-        .checkout-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        .cart-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.5);
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ef4444;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
         }
         
         /* Media Queries for Responsiveness */
-        @media (max-width: 1024px) {
-            .order-log {
-                position: relative;
-                float: none;
-                width: 100%;
-                margin: 30px 0;
-                top: 0;
-            }
-        }
-        
         @media (max-width: 768px) {
             .event-section {
                 flex-direction: column;
@@ -681,8 +787,15 @@
                 grid-template-columns: 1fr;
             }
             
+            .floating-cart {
+                width: 90%;
+                left: 5%;
+                right: 5%;
+                bottom: 80px;
+            }
+            
             .footer-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
             }
             
             .modern-header {
@@ -699,13 +812,6 @@
             
             body {
                 padding-top: 60px;
-            }
-            
-            .order-log {
-                position: relative;
-                width: 100%;
-                margin: 30px 0;
-                top: 0;
             }
         }
         
@@ -746,10 +852,6 @@
             .mobile-nav {
                 width: 80%;
             }
-            
-            .order-log {
-                padding: 15px;
-            }
         }
     </style>
 </head>
@@ -757,7 +859,7 @@
     <!-- Modern Header -->
     <header class="modern-header">
         <div class="header-logo">
-            <img src="images/logo.png" alt="Laansale Live Logo">
+            <img src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070816_Gallery.jpg?raw=true" alt="Exquisite Madiwa Flavors Logo">
         </div>
         
         <button class="nav-toggle" id="navToggle">
@@ -777,61 +879,62 @@
     <div class="overlay" id="overlay"></div>
 
     <div class="container">
-        <!-- Tagline -->
+        <!-- Tagline moved from header -->
         <div class="tagline">Premium Culinary Experiences</div>
+
+        <!-- Location Prompt Section -->
+        <section class="location-prompt">
+            <h2><i class="fas fa-location-dot"></i> Enable Your Location</h2>
+            <p>To serve you better and provide accurate delivery, please enable location services</p>
+            <button class="btn" id="enableLocation">Enable Location</button>
+            <p id="locationStatus" style="margin-top: 15px;"></p>
+        </section>
 
         <!-- Event Section -->
         <section class="event-section">
             <div class="event-image">
-                <img src="images/racecourse_event.jpg" alt="Racecourse Event">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Exclusive Culinary Experience">
             </div>
             <div class="event-description">
-                <span class="exclusive极狐-tag">EXCLUSIVE EVENT</span>
-                <h极狐2>Laansale Live</h2>
-                <p>🐎🏁 The horses aren't the only ones racing ahead today!</p>
-                <p>Just as the track brings excitement, elegance, and victory — Laansale Live is bringing that same energy into the world of online trade.</p>
-                <p>Fast. Professional. Full of momentum.</p>
-                <p>Welcome to the winner's circle of marketplaces.</极狐p>
-                <p>👉 This is Laansale Live.</p>
-                <button class="btn">Join the Experience</button>
+                <span class="exclusive-tag">EXCLUSIVE EVENT</span>
+                <h2>Premium Culinary Masterclass</h2>
+                <p>Join us for an exclusive culinary experience at our premium venue. This is not just an event—it's a transformation for discerning palates who understand that culinary excellence is the key to extraordinary experiences.</p>
+                <p>Laansale101 and Exquisite Madiwa Flavors present a fusion of elite taste and culinary mastery. Discover how we craft exceptional flavors that capture attention, create desire, and command loyalty through sensory experience.</p>
+                <p>This is where the extraordinary is ordinary, and the exceptional is expected.</p>
+                <button class="btn">Reserve Your Spot</button>
             </div>
         </section>
 
         <!-- EMF Poster Section -->
         <section class="emf-poster">
-            <img src="images/emf_poster.jpg" alt="Exquisite Madiwa Flavors">
+            <h3>Our Premium Collection</h3>
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Premium Beverage Collection">
         </section>
+
+        <!-- Special Offer Banner -->
+        <div class="special-offer">
+            <h3>⏰ Limited Time Offer! 🚀</h3>
+            <p>Order in the first 20 minutes of any hour and get 10% OFF your entire order!</p>
+            <p id="countdown" style="font-weight: bold; margin-top: 10px;"></p>
+        </div>
 
         <!-- Drink Sizes Reference -->
         <section class="drink-sizes">
             <h3>Our Premium Drink Sizes</h3>
-            <img src="images/drink_sizes.jpg" alt="Premium Drink Size Comparison">
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Premium Drink Size Comparison">
         </section>
-
-        <!-- Order Log -->
-        <div class="order-log" id="order-log">
-            <h3>Your Order</h3>
-            <div class="order-items" id="order-items">
-                <p style="text-align: center; padding: 20px;">Your order is empty</p>
-            </div>
-            <div class="order-total">
-                <span>Total:</span>
-                <span id="order-total">0/-</span>
-            </div>
-            <button class="checkout-btn" id="order-now-btn">Order Now</button>
-        </div>
 
         <!-- Menu Section -->
         <section class="menu-section">
             <div class="menu-category">
-                <h3>SNACKS</h3>
+                <h3>FRISS & 'KAK!</h3>
                 <div class="menu-items">
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Classic Crunch</span>
                             <span class="item-price">450/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/classic_crunch.jpg" alt="Classic Crunch">
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070743_Gallery.jpg?raw=true" alt="Classic Crunch">
                         <p class="item-desc">FRIES + 10 PCS MISHIKAKI + CHEF'S SIGNATURE SAUCE</p>
                         <span class="limited-edition">Limited Edition</span>
                         <div class="item-controls">
@@ -849,7 +952,7 @@
                             <span class="item-name">Grand Sultan</span>
                             <span class="item-price">550/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/grand_sultan.jpg" alt="Grand Sultan">
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070759_Gallery.jpg?raw=true" alt="Grand Sultan">
                         <p class="item-desc">MEGA FRIES LOADED WITH 15 PCS MISHIKAKI + SPECIAL SAUCE</p>
                         <p class="item-desc">EXTRA MISHIKAKI @100/- PER SKEWER</p>
                         <span class="limited-edition">Limited Edition</span>
@@ -873,11 +976,11 @@
                             <span class="item-name">Tangy Passion</span>
                             <span class="item-price" id="price-tangy-passion">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/tangy_passion.jpg" alt="Tangy Passion">
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070846_Gallery.jpg?raw=true" alt="Tangy Passion">
                         <p class="item-desc">Bold Passion, Pure Tropical Energy</p>
                         <div class="size-options">
-                            <button class="size-btn active" data-item="tangy-passion" data-size="small" data-price="极狐250">Small: 250/-</button>
-                            <button class="size-btn" data-item="tangy-passion极狐" data-size="medium" data-price="350">Medium: 350/-</button>
+                            <button class="size-btn active" data-item="tangy-passion" data-size="small" data-price="250">Small: 250/-</button>
+                            <button class="size-btn" data-item="tangy-passion" data-size="medium" data-price="350">Medium: 350/-</button>
                             <button class="size-btn" data-item="tangy-passion" data-size="large" data-price="450">Large: 450/-</button>
                         </div>
                         <div class="item-controls">
@@ -895,8 +998,8 @@
                             <span class="item-name">Mango Rush</span>
                             <span class="item-price" id="price-mango-rush">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/mango_rush.jpg" alt="Mango Rush">
-                        <p class极狐="item-desc">Thick, Juicy, Naturally Sweet</p>
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070846_Gallery.jpg?raw=true" alt="Mango Rush">
+                        <p class="item-desc">Thick, Juicy, Naturally Sweet</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="mango-rush" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="mango-rush" data-size="medium" data-price="350">Medium: 350/-</button>
@@ -915,9 +1018,9 @@
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Le' Pineapple De' Mint</span>
-                            <span class="item-price" id="price-pineapple-mint">250/-</极狐span>
+                            <span class="item-price" id="price-pineapple-mint">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/pineapple_mint.jpg" alt="Le' Pineapple De' Mint">
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070851_Gallery.jpg?raw=true" alt="Le' Pineapple De' Mint">
                         <p class="item-desc">Altuty Breeze, Pineapple Squeeze</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="pineapple-mint" data-size="small" data-price="250">Small: 250/-</button>
@@ -939,16 +1042,16 @@
                             <span class="item-name">Tropical Mix</span>
                             <span class="item-price" id="price-tropical-mix">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/tropical_mix.jpg" alt="Tropical Mix">
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070856_Gallery.jpg?raw=true" alt="Tropical Mix">
                         <p class="item-desc">All-in-one island infusion</p>
                         <div class="size-options">
-                            <button class="size-btn active极狐" data-item="tropical-mix" data-size="small" data-price="250">Small: 250/-</button>
+                            <button class="size-btn active" data-item="tropical-mix" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="tropical-mix" data-size="medium" data-price="350">Medium: 350/-</button>
                             <button class="size-btn" data-item="tropical-mix" data-size="large" data-price="450">Large: 450/-</button>
                         </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
-                                <button class="quantity-btn minus" data-item="极狐tropical-mix">-</button>
+                                <button class="quantity-btn minus" data-item="tropical-mix">-</button>
                                 <span class="quantity" data-item="tropical-mix">0</span>
                                 <button class="quantity-btn plus" data-item="tropical-mix">+</button>
                             </div>
@@ -966,7 +1069,7 @@
                             <span class="item-name">Blue Lagoon</span>
                             <span class="item-price" id="price-blue-lagoon">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/blue_lagoon.jpg" alt="Blue Lagoon">
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070907_Gallery.jpg?raw=true" alt="Blue Lagoon">
                         <p class="item-desc">Tropical Citrus Wave, Blue Ocean</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="blue-lagoon" data-size="small" data-price="300">Small: 300/-</button>
@@ -975,9 +1078,9 @@
                         </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
-                                <极狐button class="quantity-btn minus" data-item="blue-lagoon">-</button>
+                                <button class="quantity-btn minus" data-item="blue-lagoon">-</button>
                                 <span class="quantity" data-item="blue-lagoon">0</span>
-                                <button class="quantity-btn plus" data-item="blue极狐-lagoon">+</button>
+                                <button class="quantity-btn plus" data-item="blue-lagoon">+</button>
                             </div>
                             <button class="btn add-to-cart" data-item="blue-lagoon" data-price="300">Add to Cart</button>
                         </div>
@@ -988,7 +1091,7 @@
                             <span class="item-name">Red Flash</span>
                             <span class="item-price" id="price-red-flash">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/red_flash.jpg" alt="Red Flash">
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070912_Gallery.jpg?raw=true" alt="Red Flash">
                         <p class="item-desc">Bold strawberry heat meets cool mint</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="red-flash" data-size="small" data-price="300">Small: 300/-</button>
@@ -997,11 +1100,11 @@
                         </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
-                                <button class="quantity-btn minus" data极狐-item="red-flash">-</button>
-                                <span class="quantity" data-item="red-flash">极狐0</span>
+                                <button class="quantity-btn minus" data-item="red-flash">-</button>
+                                <span class="quantity" data-item="red-flash">0</span>
                                 <button class="quantity-btn plus" data-item="red-flash">+</button>
                             </div>
-                            <button class="btn add极狐-to-cart" data-item="red-flash" data-price="300">Add to Cart</button>
+                            <button class="btn add-to-cart" data-item="red-flash" data-price="300">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -1010,11 +1113,11 @@
                             <span class="item-name">Berry Breeze</span>
                             <span class="item-price" id="price-berry-breeze">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/berry_breeze.jpg" alt="Berry Breeze">
-                        <p class="item-d极狐esc">Smooth berry chill, island style</极狐p>
+                        <img class="menu-item-image" src="https://github.com/laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070921_Gallery.jpg?raw=true" alt="Berry Breeze">
+                        <p class="item-desc">Smooth berry chill, island style</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="berry-breeze" data-size="small" data-price="300">Small: 300/-</button>
-                            <button class="size-btn" data-item="berry-breeze" data-size="medium极狐" data-price="400">Medium: 400/-</button>
+                            <button class="size-btn" data-item="berry-breeze" data-size="medium" data-price="400">Medium: 400/-</button>
                             <button class="size-btn" data-item="berry-breeze" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
                         <div class="item-controls">
@@ -1032,7 +1135,7 @@
                             <span class="item-name">Ginger Gold</span>
                             <span class="item-price" id="price-ginger-gold">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="images/ginger_gold.jpg" alt="Ginger Gold">
+                        <img class="menu-item-image" src="https://github.com.laansales999/Laan101emf/blob/main/Images/Screenshot_20250831_070926_Gallery.jpg?raw=true" alt="Ginger Gold">
                         <p class="item-desc">Golden spice with honeyed flow</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="ginger-gold" data-size="small" data-price="300">Small: 300/-</button>
@@ -1064,9 +1167,9 @@
                 <input type="tel" id="phone" required>
             </div>
             <div class="form-group">
-                <label for="dressing">Clothes Description (Optional)</label>
-                <textarea id="dressing" rows="3" placeholder="Describe your outfit for easy identification"></textarea>
-            </极狐div>
+                <label for="dressing">Dressing Description (Optional)</label>
+                <textarea id="dressing" rows="3"></textarea>
+            </div>
             <div class="form-group">
                 <label for="location">Delivery Location</label>
                 <input type="text" id="delivery-location" readonly>
@@ -1077,34 +1180,63 @@
                 <textarea id="location-details" rows="2"></textarea>
             </div>
             
-            <button class="checkout-btn" id="place-order">Confirm Order & Open WhatsApp</button>
+            <!-- Payment Information -->
+            <div class="payment-info">
+                <h4>Payment Method</h4>
+                <p>We accept Lipa na M-Pesa</p>
+                <p><strong>Paybill:</strong> 542542</p>
+                <p><strong>Account Number:</strong> 786867</p>
+                <p>Please complete payment before placing your order</p>
+            </div>
+            
+            <button class="checkout-btn" id="place-order">Place Order via WhatsApp</button>
         </section>
+
+        <!-- Floating Cart -->
+        <div class="floating-cart" id="floating-cart">
+            <div class="cart-header">
+                <h3>Your Order</h3>
+                <span id="cart-count">0 items</span>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <p style="text-align: center; padding: 20px;">Your cart is empty</p>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">0/-</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+
+        <!-- Cart Toggle Button -->
+        <div class="cart-toggle" id="cart-toggle">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-badge">0</span>
+        </div>
+
+        <!-- WhatsApp Chat -->
+        <a href="https://wa.me/254115030726" class="whatsapp-chat" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="images/logo.png" alt="Laansale Live Logo">
-                    <p>Laansale — Connecting Buyers and Sellers with Confidence</p>
-                    <div class="social-icons">
-                        <a href="https://wa.me/254115030726" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
                 <div class="footer-about">
-                    <h3>About</h3>
-                    <p>Laansale isn't just a shop. It's a movement toward smarter commerce, designed for the new generation of buyers and sellers.</p>
+                    <h3>About Laansales101</h3>
+                    <p>Laansales101 was born from a deep understanding of the challenges that vendors and event-goers face. What if there was a way to merge convenience with luxury, to transform an ordinary event into an extraordinary experience? That vision led to the creation of Laansales101—a cutting-edge platform designed to make ordering seamless, effortless, and uniquely personal for every event-goer.</p>
                 </div>
-                <div class="footer-partner">
-                    <h3>Partner with Us</h3>
-                    <p>Interested in partnering with us? Reach out via WhatsApp to discuss opportunities.</p>
-                    <a href="https://wa.me/254115030726" target="_blank">Contact on WhatsApp</a>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> emflavorsales@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +254 115 030 726</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +254 115 030 726</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Laansale. All Rights Reserved.</p>
+                <p>&copy; 2025 Laansales101. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1136,14 +1268,61 @@
 
         // Initialize cart
         let cart = [];
+        let userLocation = null;
         
         // DOM Elements
-        const orderLog = document.getElementById('order-log');
-        const orderItems = document.getElementById('order-items');
-        const orderTotal = document.getElementById('order-total');
-        const orderNowBtn = document.getElementById('order-now-btn');
+        const enableLocationBtn = document.getElementById('enableLocation');
+        const locationStatus = document.getElementById('locationStatus');
+        const checkoutBtn = document.getElementById('checkout-btn');
         const checkoutForm = document.getElementById('checkout-form');
         const placeOrderBtn = document.getElementById('place-order');
+        const deliveryLocation = document.getElementById('delivery-location');
+        const countdownEl = document.getElementById('countdown');
+        const floatingCart = document.getElementById('floating-cart');
+        const cartToggle = document.getElementById('cart-toggle');
+        const cartBadge = document.getElementById('cart-badge');
+        
+        // Enable location
+        enableLocationBtn.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        userLocation = position;
+                        const { latitude, longitude } = position.coords;
+                        locationStatus.innerHTML = `Location enabled! Latitude: ${latitude.toFixed(6)}, Longitude: ${longitude.toFixed(6)}`;
+                        locationStatus.style.color = '#10b981';
+                        deliveryLocation.value = `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
+                        
+                        // Try to get address from coordinates
+                        getAddressFromCoords(latitude, longitude);
+                    },
+                    error => {
+                        locationStatus.innerHTML = 'Unable to retrieve location. Please describe your location in the checkout form.';
+                        locationStatus.style.color = '#ef4444';
+                        deliveryLocation.value = 'Location not available. Please describe below.';
+                    }
+                );
+            } else {
+                locationStatus.innerHTML = 'Geolocation is not supported by this browser. Please describe your location in the checkout form.';
+                locationStatus.style.color = '#ef4444';
+                deliveryLocation.value = 'Geolocation not supported. Please describe below.';
+            }
+        });
+        
+        // Function to get address from coordinates
+        function getAddressFromCoords(lat, lng) {
+            // Using Nominatim (OpenStreetMap) for reverse geocoding
+            fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.display_name) {
+                        deliveryLocation.value = data.display_name;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error getting address:', error);
+                });
+        }
         
         // Size selection for drinks
         document.querySelectorAll('.size-btn').forEach(button => {
@@ -1161,11 +1340,14 @@
                 button.classList.add('active');
                 
                 // Update price display
-                document.getElementById(`price-${item}`).textContent = `${price}/-`;
+                const priceEl = document.getElementById(`price-${item}`);
+                if (priceEl) {
+                    priceEl.textContent = `${price}/-`;
+                }
                 
                 // Update add to cart button data-price
                 const addButton = button.closest('.menu-item').querySelector('.add-to-cart');
-                addButton.setAttribute('data-price', price);
+                if (addButton) addButton.setAttribute('data-price', price);
             });
         });
         
@@ -1174,7 +1356,8 @@
             button.addEventListener('click', () => {
                 const item = button.getAttribute('data-item');
                 const quantityEl = document.querySelector(`.quantity[data-item="${item}"]`);
-                let quantity = parseInt(quantity极狐El.textContent);
+                if (!quantityEl) return;
+                let quantity = parseInt(quantityEl.textContent) || 0;
                 
                 if (button.classList.contains('plus')) {
                     quantity++;
@@ -1191,9 +1374,10 @@
             button.addEventListener('click', () => {
                 const item = button.getAttribute('data-item');
                 const price = parseInt(button.getAttribute('data-price'));
-                const quantity = parseInt(document.querySelector(`.quantity[data-item="${item}"]`).textContent);
+                const quantityEl = document.querySelector(`.quantity[data-item="${item}"]`);
+                const quantity = quantityEl ? parseInt(quantityEl.textContent) : 0;
                 
-                if (quantity === 0) return;
+                if (!quantity || quantity === 0) return;
                 
                 // Get selected size for drinks
                 let size = null;
@@ -1218,47 +1402,77 @@
                     });
                 }
                 
-                updateOrderLog();
+                updateCart();
                 
                 // Reset quantity
-                document.querySelector(`.quantity[data-item="${item}"]`).textContent = '0';
+                if (quantityEl) quantityEl.textContent = '0';
+                
+                // Show cart
+                floatingCart.style.display = 'block';
             });
         });
         
-        // Update order log
-        function updateOrderLog() {
-            // Clear order items
-            orderItems.innerHTML = '';
+        // Update cart
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+            
+            // Clear cart items
+            cartItems.innerHTML = '';
             
             if (cart.length === 0) {
-                orderItems.innerHTML = '<p style="text-align: center; padding: 20px;">Your order is empty</p>';
-                orderTotal.textContent = '0/-';
+                cartItems.innerHTML = '<p style="text-align: center; padding: 20px;">Your cart is empty</p>';
+                cartCount.textContent = '0 items';
+                cartTotal.textContent = '0/-';
+                cartBadge.textContent = '0';
                 return;
             }
             
             let total = 0;
+            let itemCount = 0;
             
             cart.forEach((item, index) => {
                 const itemTotal = item.price * item.quantity;
                 total += itemTotal;
+                itemCount += item.quantity;
                 
-                const orderItemEl = document.createElement('div');
-                orderItemEl.className = 'order-item';
+                const cartItemEl = document.createElement('div');
+                cartItemEl.className = 'cart-item';
                 
                 let sizeInfo = '';
                 if (item.size) {
                     sizeInfo = ` (${item.size})`;
                 }
                 
-                orderItemEl.innerHTML = `
-                    <div>${formatItemName(item.name)}${sizeInfo} x ${item.quantity}</div>
-                    <div>${itemTotal}/-</div>
+                cartItemEl.innerHTML = `
+                    <div class="cart-item-info">
+                        <div>${formatItemName(item.name)}${sizeInfo}</div>
+                        <div>${item.price}/- x ${item.quantity}</div>
+                    </div>
+                    <div class="cart-item-controls">
+                        <span>${itemTotal}/-</span>
+                        <button class="remove-btn" data-index="${index}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
                 `;
                 
-                orderItems.appendChild(orderItemEl);
+                cartItems.appendChild(cartItemEl);
             });
             
-            orderTotal.textContent = `${total}/-`;
+            cartCount.textContent = `${itemCount} ${itemCount === 1 ? 'item' : 'items'}`;
+            cartTotal.textContent = `${total}/-`;
+            cartBadge.textContent = itemCount;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = parseInt(button.getAttribute('data-index'));
+                    cart.splice(index, 1);
+                    updateCart();
+                });
+            });
         }
         
         // Format item name for display
@@ -1268,10 +1482,19 @@
                 .join(' ');
         }
         
-        // Order now button
-        orderNowBtn.addEventListener('click', () => {
+        // Toggle cart visibility
+        cartToggle.addEventListener('click', () => {
+            if (floatingCart.style.display === 'block') {
+                floatingCart.style.display = 'none';
+            } else {
+                floatingCart.style.display = 'block';
+            }
+        });
+        
+        // Checkout button
+        checkoutBtn.addEventListener('click', () => {
             if (cart.length === 0) {
-                alert('Your order is empty. Please add items before ordering.');
+                alert('Your cart is empty. Please add items before checkout.');
                 return;
             }
             
@@ -1290,20 +1513,23 @@
             }
             
             // Create order summary
-            let orderSummary = `*NEW ORDER FROM EXQUISITE MADIWA FLAVORS*\n\n`;
+            let orderSummary = `*NEW ORDER FROM EXQUISITE MADIWA FLAVORS WEBSITE*\n\n`;
             orderSummary += `*Customer Name:* ${name}\n`;
             orderSummary += `*Phone:* ${phone}\n`;
             
-            // Add clothes description if provided
-            const dressing = document.getElementById('dressing').value;
-            if (dressing) {
-                orderSummary += `*Clothes Description:* ${dressing}\n`;
+            // Add location information
+            const locationDetails = document.getElementById('location-details').value;
+            if (deliveryLocation.value && deliveryLocation.value !== 'Location not available. Please describe below.') {
+                orderSummary += `*Location:* ${deliveryLocation.value}\n`;
+            }
+            if (locationDetails) {
+                orderSummary += `*Location Details:* ${locationDetails}\n`;
             }
             
             orderSummary += `\n*Order Details:*\n`;
             
             cart.forEach(item => {
-                let size极狐Info = '';
+                let sizeInfo = '';
                 if (item.size) {
                     sizeInfo = ` (${item.size})`;
                 }
@@ -1311,23 +1537,26 @@
             });
             
             orderSummary += `\n*Total: ${cart.reduce((total, item) => total + (item.price * item.quantity), 0)}/-*\n\n`;
-            orderSummary += `*Delivery Location:* ${document.getElementById('delivery-location').value}\n`;
             
-            const locationDetails = document.getElementById('location-details').value;
-            if (locationDetails) {
-                orderSummary += `*Location Details:* ${locationDetails}\n`;
+            const dressing = document.getElementById('dressing').value;
+            if (dressing) {
+                orderSummary += `*Dressing Instructions:* ${dressing}\n`;
             }
+            
+            orderSummary += `\n*Payment Method:* Lipa na M-Pesa\n`;
+            orderSummary += `*Paybill:* 542542\n`;
+            orderSummary += `*Account Number:* 786867\n`;
             
             // Encode for WhatsApp URL
             const encodedMessage = encodeURIComponent(orderSummary);
-            const whatsappURL = `https://wa.me/254759534267?text=${encodedMessage}`;
+            const whatsappURL = `https://wa.me/254115030726?text=${encodedMessage}`;
             
             // Open WhatsApp
             window.open(whatsappURL, '_blank');
             
             // Reset cart and form
             cart = [];
-            updateOrderLog();
+            updateCart();
             checkoutForm.style.display = 'none';
             document.getElementById('name').value = '';
             document.getElementById('phone').value = '';
@@ -1337,26 +1566,32 @@
             alert('Your order has been placed! You will be redirected to WhatsApp to confirm.');
         });
         
-        // Enable location (simplified for this example)
-        const enableLocationBtn = document.createElement('button');
-        enableLocationBtn.className = 'btn';
-        enableLocationBtn.textContent = 'Enable Location';
-        enableLocationBtn.style.marginTop = '20px';
-        enableLocationBtn.addEventListener('click', () => {
-            document.getElementById('delivery-location').value = 'Location enabled (simulated)';
-        });
+        // Countdown timer for special offer
+        function updateCountdown() {
+            const now = new Date();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            if (minutes < 20) {
+                const timeLeft = 20 - minutes;
+                const secsLeft = 60 - seconds;
+                countdownEl.textContent = `Offer ends in: ${timeLeft} min ${secsLeft} sec`;
+            } else {
+                const nextHour = new Date(now);
+                nextHour.setHours(nextHour.getHours() + 1);
+                nextHour.setMinutes(0);
+                nextHour.setSeconds(0);
+                
+                const diff = nextHour - now;
+                const minsLeft = Math.floor(diff / 60000);
+                const secsLeft = Math.floor((diff % 60000) / 1000);
+                
+                countdownEl.textContent = `Next offer in: ${minsLeft} min ${secsLeft} sec`;
+            }
+        }
         
-        const locationPrompt = document.createElement('div');
-        locationPrompt.className = 'location-prompt';
-        locationPrompt.innerHTML = `
-            <h2><i class="fas fa-location-dot"></i> Enable Your Location</h2>
-            <p>To serve you better and provide accurate delivery, please enable location services</p>
-        `;
-        locationPrompt.appendChild(enableLocationBtn);
-        
-        // Insert location prompt after the tagline
-        const tagline = document.querySelector('.tagline');
-        tagline.parentNode.insertBefore(locationPrompt, tagline.nextSibling);
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
