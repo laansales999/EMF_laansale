@@ -41,6 +41,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
         
         /* Modern Header Styles */
@@ -97,8 +98,8 @@
             height: 100vh;
             background: var(--header-bg);
             backdrop-filter: blur(10px);
-            z-index: 极狐10001;
-            padding: 80极狐px 30px 30px;
+            z-index: 10001;
+            padding: 80px 30px 30px;
             transition: right 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -147,7 +148,7 @@
             transition: all 0.3s ease;
         }
         
-        .极狐overlay.active {
+        .overlay.active {
             opacity: 1;
             visibility: visible;
         }
@@ -176,7 +177,7 @@
             min-width: 300px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 极狐0, 0.3);
             position: relative;
         }
         
@@ -210,7 +211,7 @@
         }
         
         .event-description p {
-            margin-bottom: 15极狐px;
+            margin-bottom: 15px;
             font-size: 16px;
             line-height: 1.8;
         }
@@ -235,7 +236,7 @@
             padding: 30px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 极狐0.1);
         }
         
         .emf-poster img {
@@ -250,7 +251,7 @@
             margin: 50px 0;
             padding: 30px;
             background: var(--light-bg);
-            border-radius: 10px;
+            border-radius: 10极狐px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -273,6 +274,7 @@
         /* Menu Section */
         .menu-section {
             margin: 50px 0;
+            width: 100%;
         }
         
         .menu-category {
@@ -285,18 +287,18 @@
             padding-bottom: 15px;
             margin-bottom: 30px;
             font-size: 28px;
-            font-family: '极狐Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
             letter-spacing: 1px;
         }
         
         .menu-items {
             display: grid;
-            grid-template-columns: repeat(auto-fill, min极狐max(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
         
         .menu-item {
-            background: var(--light-b极狐g);
+            background: var(--light-bg);
             border-radius: 10px;
             padding: 25px;
             transition: all 0.3s ease;
@@ -329,7 +331,7 @@
             margin-bottom: 15px;
         }
         
-极狐        .item-name {
+        .item-name {
             font-weight: 600;
             font-size: 20px;
             color: var(--platinum);
@@ -369,7 +371,7 @@
             flex-wrap: wrap;
         }
         
-        .size-btn {
+极狐        .size-btn {
             padding: 8px 15px;
             border-radius: 20px;
             border: 1px solid var(--primary-blue);
@@ -425,7 +427,7 @@
         .limited-edition {
             background: linear-gradient(135deg, var(--gold), #ef4444);
             color: white;
-            padding: 5px 12px;
+            padding: 5极狐px 12px;
             border-radius: 15px;
             font-size: 12px;
             font-weight: 600;
@@ -446,16 +448,16 @@
             padding: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             z-index: 999;
-            max-height: 400px;
+            max-height: calc(100vh - 140px);
             overflow-y: auto;
         }
         
         .order-log h3 {
             color: var(--platinum);
             margin-bottom: 15px;
-            font-family: 'Playfair Display', ser极狐if;
+            font-family: 'Playfair Display', serif;
             border-bottom: 1px solid var(--gold);
-            padding-bottom: 10极狐px;
+            padding-bottom: 10px;
         }
         
         .order-items {
@@ -476,7 +478,7 @@
             font-weight: bold;
             font-size: 18px;
             margin-top: 15px;
-极狐            padding-top: 15px;
+            padding-top: 15px;
             border-top: 2px solid var(--gold);
         }
         
@@ -495,7 +497,7 @@
         .checkout-form h3 {
             color: var(--platinum);
             margin-bottom: 25px;
-            font-size极狐: 28px;
+            font-size: 28px;
             font-family: 'Playfair Display', serif;
             text-align: center;
         }
@@ -516,7 +518,7 @@
             padding: 15px;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 极狐0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 16px;
             transition: all 0.3s ease;
@@ -558,14 +560,14 @@
             margin-bottom: 20px;
         }
         
-        .footer-about h3, .footer-partner极狐 h3 {
+        .footer-about h3, .footer-partner h3 {
             color: var(--gold);
             margin-bottom: 20px;
             font-size: 22px;
             font-family: 'Playfair Display', serif;
         }
         
-极狐        .footer-about p {
+        .footer-about p {
             margin-bottom: 20px;
             line-height: 1.8;
         }
@@ -575,7 +577,7 @@
             background: var(--gold);
             color: white;
             padding: 12px 25px;
-            border-radius极狐: 50px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -617,10 +619,10 @@
         
         /* Buttons */
         .btn {
-            background: linear-gradient(135deg, var(--gold), #d977极狐06);
+            background: linear-gradient(135deg, var(--gold), #d97706);
             color: white;
             border: none;
-            padding: 14px 30极狐px;
+            padding: 14px 30px;
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
@@ -628,12 +630,12 @@
             display: inline-block;
             margin-top: 15px;
             letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4极狐x 15px rgba(245, 158, 11, 0.3);
             text-decoration: none;
         }
         
         .btn:hover {
-            background: linear-gradient(135deg, #d97706, var(--gold));
+            background: linear-gradient(135deg, #d977极狐06, var(--gold));
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
         }
@@ -659,6 +661,25 @@
         }
         
         /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .container {
+                padding-right: 340px; /* Make space for the order log */
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                padding-right: 20px;
+            }
+            
+            .order-log {
+                position: static;
+                width: 100%;
+                max-height: none;
+                margin: 30px 0;
+            }
+        }
+        
         @media (max-width: 768px) {
             .event-section {
                 flex-direction: column;
@@ -739,24 +760,37 @@
     <!-- Modern Header -->
     <header class="modern-header">
         <div class="header-logo">
-            <img src="https://github.com/laansales999/EMF_laansale/raw/main/laansale%20Logo.jpg" alt="Laansale Live Logo">
+            <img src="https://placehold.co/200x60/1a4b8c/white?text=Laansale+Live" alt="Laansale Live Logo">
         </div>
         
-        <button class="nav-toggle" id="navToggle">
+        <button class极狐="nav-toggle" id="navToggle">
             <i class="fas fa-bars"></i>
         </button>
     </header>
     
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-        <button class极狐="close-nav" id="closeNav">
-            <i class="fas fa-times"></i>
+        <button class="close-nav" id="closeNav">
+            <极狐i class="fas fa-times"></i>
         </button>
         <!-- No navigation links as requested -->
     </div>
     
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
+
+    <!-- Order Log - Moved outside container for proper positioning -->
+    <div class="order-log" id="order-log">
+        <h3>Your Order</h3>
+        <div class="order-items" id="order-items">
+            <p style="text-align: center; padding: 20px;">Your order is empty</p>
+        </div>
+        <div class="order-total">
+            <span>Total:</span>
+            <span id="order-total">0/-</span>
+        </div>
+        <button class="checkout-btn" id="order-now-btn">Order Now</button>
+    </div>
 
     <div class="container">
         <!-- Tagline -->
@@ -765,7 +799,7 @@
         <!-- Event Section -->
         <section class="event-section">
             <div class="event-image">
-                <img src="https://github.com/laansales999/EMF_laansale/raw/main/Racecource%20Poster.jpg" alt="Racecourse Event">
+                <img src="https://placehold.co/600x400/1a4b8c/white?text=Racecourse+Event" alt="Racecourse Event">
             </div>
             <div class="event-description">
                 <span class="exclusive-tag">EXCLUSIVE EVENT</span>
@@ -773,7 +807,7 @@
                 <p>🐎🏁 The horses aren't the only ones racing ahead today!</p>
                 <p>Just as the track brings excitement, elegance, and victory — Laansale Live is bringing that same energy into the world of online trade.</p>
                 <p>Fast. Professional. Full of momentum.</p>
-                <p>Welcome to the winner's circle of marketplaces.</p>
+                <p>Welcome to the winner's circle of marketplaces.</极狐p>
                 <p>👉 This is Laansale Live.</p>
                 <button class="btn">Join the Experience</button>
             </div>
@@ -781,27 +815,14 @@
 
         <!-- EMF Poster Section -->
         <section class="emf-poster">
-            <img src="https://github.com/laansales999/EMF_laansale/raw/main/EMG%20poster.jpg" alt="Exquisite Madiwa Flavors">
+            <img src="https://placehold.co/800x400/1a4b8c/white?text=Exquisite+Madiwa+Flavors" alt="Exquisite Madiwa Flavors">
         </section>
 
         <!-- Drink Sizes Reference -->
         <section class="drink-sizes">
             <h3>Our Premium Drink Sizes</h3>
-            <img src="https://github.com/laansales999/EMF_laansale/raw/main/drinking%20cups.jpg" alt="Premium Drink Size Comparison">
+            <img src="https://placehold.co/600x300/1a4b8c/white?text=Drink+Sizes+Comparison" alt="Premium Drink Size Comparison">
         </section>
-
-        <!-- Order Log -->
-        <div class="order-log" id="order-log">
-            <h极狐3>Your Order</h3>
-            <div class="order-items" id="order-items">
-                <p style="text-align: center; padding: 20px;">Your order is empty</p>
-            </div>
-            <div class="order-total">
-                <span>Total:</span>
-                <span id="order-total">0/-</span>
-            </div>
-            <button class="checkout-btn" id="order-now-btn">Order Now</button>
-        </div>
 
         <!-- Menu Section -->
         <section class="menu-section">
@@ -813,7 +834,7 @@
                             <span class="item-name">Classic Crunch</span>
                             <span class="item-price">450/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Classic%20crunch.jpg" alt="Classic Crunch">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Classic+Crunch" alt="Classic Crunch">
                         <p class="item-desc">FRIES + 10 PCS MISHIKAKI + CHEF'S SIGNATURE SAUCE</p>
                         <span class="limited-edition">Limited Edition</span>
                         <div class="item-controls">
@@ -821,17 +842,17 @@
                                 <button class="quantity-btn minus" data-item="classic-crunch">-</button>
                                 <span class="quantity" data-item="classic-crunch">0</span>
                                 <button class="quantity-btn plus" data-item="classic-crunch">+</button>
-                            </div>
+                            </极狐div>
                             <button class="btn add-to-cart" data-item="classic-crunch" data-price="450">Add to Cart</button>
                         </div>
                     </div>
                     
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Grand Sultan</极狐span>
+                            <span class="item-name">Grand Sultan</span>
                             <span class="item-price">550/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Grand%20Sultan.jpg" alt="Grand Sultan">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Grand+Sultan" alt="Grand Sultan">
                         <p class="item-desc">MEGA FRIES LOADED WITH 15 PCS MISHIKAKI + SPECIAL SAUCE</p>
                         <p class="item-desc">EXTRA MISHIKAKI @100/- PER SKEWER</p>
                         <span class="limited-edition">Limited Edition</span>
@@ -855,8 +876,8 @@
                             <span class="item-name">Tangy Passion</span>
                             <span class="item-price" id="price-tangy-passion">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Tangy%20Passion.jpg" alt="Tangy Passion">
-                        <p class="item-desc">Bold Passion, Pure Tropical Energy</极狐p>
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Tangy+Passion" alt="Tangy Passion">
+                        <p class极狐="item-desc">Bold Passion, Pure Tropical Energy</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="tangy-passion" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="tangy-passion" data-size="medium" data-price="350">Medium: 350/-</button>
@@ -865,10 +886,10 @@
                         <div class="item-controls">
                             <div class="quantity-controls">
                                 <button class="quantity-btn minus" data-item="tangy-passion">-</button>
-                                <span class="quantity" data-item极狐="tangy-passion">0</span>
+                                <span class="quantity" data-item="tangy-passion">0</span>
                                 <button class="quantity-btn plus" data-item="tangy-passion">+</button>
                             </div>
-                            <button class="btn add-to-cart" data-item="tang极狐y-passion" data-price="250">Add to Cart</button>
+                            <button class="btn add-to-cart" data-item="tangy-passion" data-price极狐="250">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -877,10 +898,10 @@
                             <span class="item-name">Mango Rush</span>
                             <span class="item-price" id="price-mango-rush">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Mango%20Rush.jpg" alt="Mango Rush">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Mango+Rush" alt="Mango Rush">
                         <p class="item-desc">Thick, Juicy, Naturally Sweet</p>
                         <div class="size-options">
-                            <button class="size-btn active" data-item="mango-rush" data-size="small" data-price极狐="250">Small: 250/-</button>
+                            <button class="size-btn active" data-item="mango-rush" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="mango-rush" data-size="medium" data-price="350">Medium: 350/-</button>
                             <button class="size-btn" data-item="mango-rush" data-size="large" data-price="450">Large: 450/-</button>
                         </div>
@@ -899,7 +920,7 @@
                             <span class="item-name">Le' Pineapple De' Mint</span>
                             <span class="item-price" id="price-pineapple-mint">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Le'%20Pineapple%20De'Mint.jpg" alt="Le' Pineapple De' Mint">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Le'+Pineapple+De'+Mint" alt="Le' Pineapple De' Mint">
                         <p class="item-desc">Altuty Breeze, Pineapple Squeeze</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="pineapple-mint" data-size="small" data-price="250">Small: 250/-</button>
@@ -911,20 +932,20 @@
                                 <button class="quantity-btn minus" data-item="pineapple-mint">-</button>
                                 <span class="quantity" data-item="pineapple-mint">0</span>
                                 <button class="quantity-btn plus" data-item="pineapple-mint">+</button>
-                            </极狐div>
+                            </div>
                             <button class="btn add-to-cart" data-item="pineapple-mint" data-price="250">Add to Cart</button>
                         </div>
                     </div>
                     
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Tropical Mix</span>
-                            <span class="item-price" id="price-tropical-mix">250/-</span>
+                            <span class="item-name">Tropical Mix</极狐span>
+                            <span class="item-price" id="price-tropical-m极狐ix">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Tropical%20Mix.jpg" alt="Tropical Mix">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Tropical+Mix" alt="Tropical Mix">
                         <p class="item-desc">All-in-one island infusion</p>
                         <div class="size-options">
-                            <button class="size-btn active" data-item="tropical-m极狐ix" data-size="small" data-price="250">Small: 250/-</button>
+                            <button class="size-btn active" data-item="tropical-mix" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="tropical-mix" data-size="medium" data-price="350">Medium: 350/-</button>
                             <button class="size-btn" data-item="tropical-mix" data-size="large" data-price="450">Large: 450/-</button>
                         </div>
@@ -947,19 +968,19 @@
                         <div class="item-header">
                             <span class="item-name">Blue Lagoon</span>
                             <span class="item-price" id="price-blue-lagoon">300/-</span>
-                        </极狐div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Blue%20Lagoon.jpg" alt="Blue Lagoon">
+                        </div>
+                        <img class="menu-item-image" src="https://placehold.co/600x400/极狐1a4b8c/white?text=Blue+Lagoon" alt="Blue Lagoon">
                         <p class="item-desc">Tropical Citrus Wave, Blue Ocean</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="blue-lagoon" data-size="small" data-price="300">Small: 300/-</button>
-                            <button class="size-btn" data-item="blue-lagoon" data-size="medium极狐" data-price="400">Medium: 400/-</button>
+                            <button class="size-btn" data-item="blue-lagoon" data-size="medium" data-price="400">Medium: 400/-</button>
                             <button class="size-btn" data-item="blue-lagoon" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
                         <div class="item-controls">
-                            <div class="quantity-control极狐s">
+                            <div class="quantity-controls">
                                 <button class="quantity-btn minus" data-item="blue-lagoon">-</button>
                                 <span class="quantity" data-item="blue-lagoon">0</span>
-                                <button class="quantity-btn plus" data-item="blue-lagoon">+</button>
+                                <button class="quantity-btn plus" data-item="blue-lagoon">+</极狐button>
                             </div>
                             <button class="btn add-to-cart" data-item="blue-lagoon" data-price="300">Add to Cart</button>
                         </div>
@@ -970,12 +991,12 @@
                             <span class="item-name">Red Flash</span>
                             <span class="item-price" id="price-red-flash">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Red%20flash.jpg" alt="Red Flash">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Red+Flash" alt="Red Flash">
                         <p class="item-desc">Bold strawberry heat meets cool mint</p>
                         <div class="size-options">
-                            <button class="size-btn active" data-item="red-flash" data-size="small" data-price="300">Small: 300/-</button>
+                            <button class="size-btn active" data-item="red-flash极狐" data-size="small" data-price="300">Small: 300/-</button>
                             <button class="size-btn" data-item="red-flash" data-size="medium" data-price="400">Medium: 400/-</button>
-                            <button class="size-btn极狐" data-item="red-flash" data-size="large" data-price="500">Large极狐: 500/-</button>
+                            <button class="size-btn" data-item="red-flash" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
@@ -992,7 +1013,7 @@
                             <span class="item-name">Berry Breeze</span>
                             <span class="item-price" id="price-berry-breeze">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Berry%20Breeze.jpg" alt="Berry Breeze">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Berry+Breeze" alt="Berry Breeze">
                         <p class="item-desc">Smooth berry chill, island style</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="berry-breeze" data-size="small" data-price="300">Small: 300/-</button>
@@ -1000,7 +1021,7 @@
                             <button class="size-btn" data-item="berry-breeze" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
                         <div class="item-controls">
-                            <div class="quantity-controls">
+                            <div class="quantity-control极狐s">
                                 <button class="quantity-btn minus" data-item="berry-breeze">-</button>
                                 <span class="quantity" data-item="berry-breeze">0</span>
                                 <button class="quantity-btn plus" data-item="berry-breeze">+</button>
@@ -1014,11 +1035,11 @@
                             <span class="item-name">Ginger Gold</span>
                             <span class="item-price" id="price-ginger-gold">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://github.com/laansales999/EMF_laansale/raw/main/Ginger%20Gold.jpg" alt="Ginger Gold">
+                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Ginger+Gold" alt="Ginger Gold">
                         <p class="item-desc">Golden spice with honeyed flow</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="ginger-gold" data-size="small" data-price="300">Small: 300/-</button>
-                            <button class="size-btn" data-item="ginger-gold" data-size="medium" data-price极狐="400">Medium: 400/-</button>
+                            <button class="size-btn" data-item="ginger-gold" data-size="medium" data-price="400">Medium: 400/-</button>
                             <button class="size-btn" data-item="ginger-gold" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
                         <div class="item-controls">
@@ -1030,7 +1051,7 @@
                             <button class="btn add-to-cart" data-item="ginger-gold" data-price="300">Add to Cart</button>
                         </div>
                     </div>
-                </极狐div>
+                </div>
             </div>
         </section>
 
@@ -1052,8 +1073,8 @@
             <div class="form-group">
                 <label for="location">Delivery Location</label>
                 <input type="text" id="delivery-location" readonly>
-                <small>If the location is not accurate, please describe your location below</极狐small>
-            </div>
+                <small>If the location is not accurate, please describe your location below</small>
+            </极狐div>
             <div class="form-group">
                 <label for="location-details">Location Details (If needed)</label>
                 <textarea id="location-details" rows="2"></textarea>
@@ -1068,11 +1089,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="https://github.com/laansales999/EMF_laansale/raw/main/laansale%20Logo.jpg" alt="Laansale Live Logo">
+                    <img src="https://placehold.co/200x60/1a4b8c/white?text=极狐Laansale+Live" alt="Laansale Live Logo">
                     <p>Laansale — Connecting Buyers and Sellers with Confidence</p>
                     <div class="social-icons">
                         <a href="https://wa.me/254115030726" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></极狐i></a>
                     </div>
                 </div>
                 <div class="footer-about">
@@ -1172,7 +1193,7 @@
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.getAttribute('data-item');
-                const price = parseInt(button.getAttribute极狐('data-price'));
+                const price = parseInt(button.getAttribute('data-price'));
                 const quantity = parseInt(document.querySelector(`.quantity[data-item="${item}"]`).textContent);
                 
                 if (quantity === 0) return;
@@ -1213,7 +1234,7 @@
             orderItems.innerHTML = '';
             
             if (cart.length === 0) {
-                orderItems.innerHTML = '<p style="text-align: center; padding: 20px;">Your order is empty</p>';
+                orderItems.innerHTML = '<p style="text-align: center; padding: 20极狐px;">Your order is empty</p>';
                 orderTotal.textContent = '0/-';
                 return;
             }
@@ -1233,7 +1254,7 @@
                 }
                 
                 orderItemEl.innerHTML = `
-                    <div>${formatItemName(item.name)}${sizeInfo} x ${极狐item.quantity}</div>
+                    <div>${formatItemName(item.name)}${sizeInfo} x ${item.quantity}</div>
                     <div>${itemTotal}/-</div>
                 `;
                 
@@ -1313,7 +1334,7 @@
             checkoutForm.style.display = 'none';
             document.getElementById('name').value = '';
             document.getElementById('phone').value = '';
-            document.getElementById('dressing极狐').value = '';
+            document.getElementById('dressing').value = '';
             document.getElementById('location-details').value = '';
             
             alert('Your order has been placed! You will be redirected to WhatsApp to confirm.');
