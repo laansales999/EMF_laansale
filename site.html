@@ -1,344 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exquisite Madiwa Flavors</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  /* RESET */
-  * {margin:0;padding:0;box-sizing:border-box;}
-  body {font-family:'Poppins',sans-serif;color:#fff;background-color:#0a192f;}
-  a {text-decoration:none;color:inherit;}
-  img {max-width:100%;display:block;}
-  ul {list-style:none;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laansale Live Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Reset & basic styling */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; }
+        button { cursor: pointer; }
 
-  /* COLORS */
-  :root {
-    --primary-blue:#0c4da2;
-    --dark-blue:#0a192f;
-    --gold:#f59e0b;
-  }
+        /* Header */
+        header { background: #1a4b8c; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; }
 
-  /* HEADER */
-  header {
-    position: fixed; top:0; left:0; width:100%; background:var(--dark-blue);
-    display:flex;justify-content:space-between;align-items:center;
-    padding:1rem 2rem; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.5);
-  }
-  header .logo img {height:50px;}
-  nav ul {display:flex;gap:2rem;}
-  nav ul li {cursor:pointer;}
-  nav .hamburger {display:none;flex-direction:column;cursor:pointer;}
-  nav .hamburger div {width:25px;height:3px;background:#fff;margin:4px 0;}
+        /* Layout */
+        main { flex: 1; display: flex; gap: 1rem; padding: 1rem; }
+        .menu-section { flex: 2; overflow-y: auto; max-height: 80vh; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+        #order-log { flex: 1; background: #f5f5f5; padding: 1rem; border-left: 2px solid #ddd; position: sticky; top: 1rem; height: fit-content; }
 
-  /* HERO */
-  .hero {
-    height:80vh;
-    background:var(--primary-blue) url('https://github.com/laansales999/EMF_laansale/blob/main/EMG%20poster.jpg?raw=true') center/cover no-repeat;
-    display:flex;align-items:center;justify-content:center;
-    text-align:center; padding-top:80px;
-  }
-  .hero h1 {font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:1rem;color:var(--gold);}
-  .hero p {font-size:1.2rem;}
+        /* Menu Items */
+        .menu-item { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; background: white; display: flex; flex-direction: column; gap: 0.5rem; }
+        .menu-item h3 { font-size: 1.2rem; }
+        .menu-item .price { font-weight: bold; }
+        .size-buttons, .quantity-controls { display: flex; gap: 0.5rem; }
+        .size-btn, .quantity-btn, .add-to-cart { padding: 0.3rem 0.5rem; border: 1px solid #1a4b8c; border-radius: 4px; background: white; color: #1a4b8c; }
+        .size-btn.active { background: #1a4b8c; color: white; }
+        .quantity { width: 30px; text-align: center; }
 
-  /* SECTIONS */
-  section {padding:4rem 2rem;}
-  h2 {font-family:'Playfair Display',serif;color:var(--gold);text-align:center;margin-bottom:2rem;font-size:2rem;}
+        /* Order Log */
+        #order-log h2 { margin-bottom: 1rem; }
+        .order-item { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .checkout-btn { background: #1a4b8c; color: white; padding: 0.5rem; border: none; border-radius: 4px; width: 100%; margin-top: 1rem; }
 
-  /* PRODUCT GRID */
-  .products {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
-  .product-card {background:#0c4da2;padding:1rem;border-radius:10px;position:relative;}
-  .product-card img {border-radius:10px;}
-  .product-card h3 {margin:0.5rem 0;color:#fff;}
-  .product-card p {font-size:0.9rem;margin-bottom:0.5rem;}
-  .product-card .price {font-weight:600;color:var(--gold);}
-  .product-card select, .product-card input[type=number] {margin-top:0.5rem;width:100%;padding:0.3rem;border-radius:5px;border:none;}
-  .product-card button {margin-top:0.5rem;padding:0.5rem;background:var(--gold);border:none;color:#0a192f;font-weight:600;width:100%;cursor:pointer;border-radius:5px;transition:0.3s;}
-  .product-card button:hover {opacity:0.8;}
+        /* Checkout form */
+        #checkout-form { display: none; margin-top: 1rem; }
+        .form-group { margin-bottom: 0.5rem; display: flex; flex-direction: column; }
+        .form-group input, .form-group textarea { padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
 
-  /* CART */
-  .cart {
-    position:fixed; top:80px; right:2rem; background:#0c4da2;padding:1rem;width:300px;max-height:80vh;
-    overflow-y:auto;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.5); z-index:999;
-  }
-  .cart h3 {color:var(--gold);margin-bottom:1rem;}
-  .cart-item {display:flex;justify-content:space-between;margin-bottom:1rem;}
-  .cart-item p {margin:0;}
-  .cart-item button {background:red;color:#fff;border:none;border-radius:5px;padding:0 0.5rem;cursor:pointer;}
-  .cart-total {margin-top:1rem;font-weight:600;color:var(--gold);}
-  .checkout-btn {margin-top:1rem;padding:0.5rem;width:100%;background:var(--gold);color:#0a192f;border:none;border-radius:5px;cursor:pointer;font-weight:600;}
+        /* Footer */
+        footer { background: #1a4b8c; color: white; padding: 1rem; margin-top: auto; }
+        .footer-content { display: flex; flex-wrap: wrap; gap: 2rem; }
+        .footer-content div { flex: 1 1 200px; }
+        .footer-bottom { text-align: center; margin-top: 1rem; font-size: 0.9rem; }
 
-  /* CHECKOUT */
-  .checkout-form {display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
-  .checkout-form input, .checkout-form textarea {padding:0.5rem;border-radius:5px;border:none;width:100%;}
-  .checkout-form button {background:var(--gold);color:#0a192f;padding:0.5rem;border:none;border-radius:5px;font-weight:600;cursor:pointer;}
-
-  /* FOOTER */
-  footer {background:#0a192f;color:#fff;padding:2rem;text-align:center;}
-  footer a {color:var(--gold);margin:0 0.5rem;}
-
-  /* RESPONSIVE */
-  @media(max-width:768px){
-    nav ul {display:none;flex-direction:column;background:var(--dark-blue);position:absolute;top:70px;right:0;width:200px;padding:1rem;border-radius:5px;}
-    nav ul.active {display:flex;}
-    nav .hamburger {display:flex;}
-    .cart {position:static;width:100%;max-height:none;margin-top:2rem;}
-  }
-</style>
+        /* Responsive */
+        @media(max-width: 768px){
+            main { flex-direction: column; }
+            #order-log { position: static; width: 100%; border-left: none; border-top: 2px solid #ddd; }
+            .menu-section { max-height: none; grid-template-columns: 1fr 1fr; }
+        }
+        @media(max-width: 480px){
+            .menu-section { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <img src="https://github.com/laansales999/EMF_laansale/blob/main/laansale%20Logo.jpg?raw=true" alt="Exquisite Madiwa Flavors">
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#snacks">SNACKS</a></li>
-      <li><a href="#fresh-juice">FRESH JUICE</a></li>
-      <li><a href="#magic-mojitos">MAGIC MOJITOS</a></li>
-      <li><a href="#checkout">CHECKOUT</a></li>
-    </ul>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </div>
-  </nav>
+    <h1>Laansale Live Menu</h1>
 </header>
 
-<section class="hero">
-  <div>
-    <h1>Premium Culinary Experiences</h1>
-    <p>Indulge in flavors that excite your senses</p>
-  </div>
-</section>
+<main>
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <!-- Example menu items -->
+        <div class="menu-item">
+            <h3>Grilled Chicken</h3>
+            <div class="price" id="price-grilled-chicken">500/-</div>
+            <div class="quantity-controls">
+                <button class="quantity-btn minus" data-item="grilled-chicken">-</button>
+                <div class="quantity" data-item="grilled-chicken">0</div>
+                <button class="quantity-btn plus" data-item="grilled-chicken">+</button>
+            </div>
+            <button class="add-to-cart" data-item="grilled-chicken" data-price="500">Add to Order</button>
+        </div>
 
-<!-- SNACKS -->
-<section id="snacks">
-  <h2>SNACKS</h2>
-  <div class="products">
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Classic%20crunch.jpg?raw=true" alt="Classic Crunch">
-      <h3>Classic Crunch</h3>
-      <p>Deliciously seasoned and crunchy snack.</p>
-      <p class="price">350/-</p>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Classic Crunch', 350, this)">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Grand%20Sultan.jpg?raw=true" alt="Grand Sultan">
-      <h3>Grand Sultan</h3>
-      <p>Richly flavored snack fit for royalty.</p>
-      <p class="price">500/-</p>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Grand Sultan', 500, this)">Add to Cart</button>
-    </div>
-  </div>
-</section>
+        <div class="menu-item">
+            <h3>Soft Drink</h3>
+            <div class="price" id="price-soft-drink">150/-</div>
+            <div class="size-buttons">
+                <button class="size-btn" data-item="soft-drink" data-size="Small" data-price="150">Small</button>
+                <button class="size-btn" data-item="soft-drink" data-size="Medium" data-price="200">Medium</button>
+                <button class="size-btn" data-item="soft-drink" data-size="Large" data-price="250">Large</button>
+            </div>
+            <div class="quantity-controls">
+                <button class="quantity-btn minus" data-item="soft-drink">-</button>
+                <div class="quantity" data-item="soft-drink">0</div>
+                <button class="quantity-btn plus" data-item="soft-drink">+</button>
+            </div>
+            <button class="add-to-cart" data-item="soft-drink" data-price="150">Add to Order</button>
+        </div>
 
-<!-- FRESH JUICE -->
-<section id="fresh-juice">
-  <h2>FRESH JUICE</h2>
-  <div class="products">
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Berry%20Breeze.jpg?raw=true" alt="Berry Breeze">
-      <h3>Berry Breeze</h3>
-      <p>Fresh mixed berries with a hint of mint.</p>
-      <p class="price">400/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Berry Breeze', 400, this)">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Blue%20Lagoon.jpg?raw=true" alt="Blue Lagoon">
-      <h3>Blue Lagoon</h3>
-      <p>Refreshing tropical blueberry drink.</p>
-      <p class="price">450/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Blue Lagoon', 450, this)">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Ginger%20Gold.jpg?raw=true" alt="Ginger Gold">
-      <h3>Ginger Gold</h3>
-      <p>Invigorating ginger drink with a golden hue.</p>
-      <p class="price">400/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Ginger Gold', 400, this)">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Tangy%20Passion.jpg?raw=true" alt="Tangy Passion">
-      <h3>Tangy Passion</h3>
-      <p>Passion fruit juice with a tangy twist.</p>
-      <p class="price">450/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Tangy Passion', 450, this)">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Tropical%20Mix.jpg?raw=true" alt="Tropical Mix">
-      <h3>Tropical Mix</h3>
-      <p>Exotic blend of tropical fruits for ultimate refreshment.</p>
-      <p class="price">500/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Tropical Mix', 500, this)">Add to Cart</button>
-    </div>
-  </div>
-</section>
+        <!-- Add more menu items as needed -->
+    </section>
 
-<!-- MAGIC MOJITOS -->
-<section id="magic-mojitos">
-  <h2>MAGIC MOJITOS</h2>
-  <div class="products">
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Le'%20Pineapple%20De'Mint.jpg?raw=true" alt="Le' Pineapple de'Mint">
-      <h3>Le' Pineapple de'Mint</h3>
-      <p>Minty pineapple mojito with zest.</p>
-      <p class="price">500/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Le\' Pineapple de\'Mint', 500, this)">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Mango%20Rush.jpg?raw=true" alt="Mango Rush">
-      <h3>Mango Rush</h3>
-      <p>Sweet and tangy mango mojito delight.</p>
-      <p class="price">450/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Mango Rush', 450, this)">Add to Cart</button>
-    </div>
-    <div class="product-card">
-      <img src="https://github.com/laansales999/EMF_laansale/blob/main/Red%20flash.jpg?raw=true" alt="Red Flash">
-      <h3>Red Flash</h3>
-      <p>Vibrant red mojito with bold flavors.</p>
-      <p class="price">500/-</p>
-      <select class="size">
-        <option value="small">Small</option>
-        <option value="medium" selected>Medium</option>
-        <option value="large">Large</option>
-      </select>
-      <input type="number" min="1" value="1" class="qty">
-      <button onclick="addToCart('Red Flash', 500, this)">Add to Cart</button>
-    </div>
-  </div>
-</section>
+    <!-- Order Log Sidebar -->
+    <aside id="order-log">
+        <h2>Your Order</h2>
+        <div id="order-items">
+            <p style="text-align:center; padding:20px;">Your order is empty</p>
+        </div>
+        <div><strong>Total: </strong><span id="order-total">0/-</span></div>
+        <button class="checkout-btn" id="order-now-btn">Checkout</button>
 
-<!-- CART -->
-<div class="cart" id="cart">
-  <h3>Your Order</h3>
-  <div id="cart-items"></div>
-  <p class="cart-total">Total: 0/-</p>
-  <button class="checkout-btn" onclick="scrollToCheckout()">Checkout</button>
-</div>
+        <!-- Checkout Form -->
+        <section id="checkout-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="dressing">Clothes Description (Optional)</label>
+                <textarea id="dressing" rows="3" placeholder="Describe your outfit"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="delivery-location">Delivery Location</label>
+                <input type="text" id="delivery-location" readonly>
+            </div>
+            <div class="form-group">
+                <label for="location-details">Location Details (Optional)</label>
+                <textarea id="location-details" rows="2"></textarea>
+            </div>
+            <button class="checkout-btn" id="place-order">Confirm Order & Open WhatsApp</button>
+        </section>
+    </aside>
+</main>
 
-<!-- CHECKOUT FORM -->
-<section id="checkout">
-  <h2>Checkout</h2>
-  <form class="checkout-form" onsubmit="submitOrder(event)">
-    <input type="text" id="name" placeholder="Full Name" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-    <textarea id="address" placeholder="Delivery Address" rows="3" required></textarea>
-    <button type="submit">Submit Order via WhatsApp</button>
-  </form>
-</section>
-
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
-  <p>&copy; 2025 Exquisite Madiwa Flavors. All rights reserved.</p>
-  <p>
-    <a href="#">Facebook</a> |
-    <a href="#">Instagram</a> |
-    <a href="#">Twitter</a>
-  </p>
-  <p>Contact: info@emf.com | +254 700 000000</p>
+    <div class="footer-content">
+        <div>
+            <img src="https://placehold.co/200x60/1a4b8c/white?text=Laansale+Live" alt="Laansale Logo">
+            <p>Laansale — Connecting Buyers and Sellers with Confidence</p>
+        </div>
+        <div>
+            <h3>About</h3>
+            <p>Laansale isn't just a shop. It's a movement toward smarter commerce, designed for the new generation.</p>
+        </div>
+        <div>
+            <h3>Partner with Us</h3>
+            <p>Interested in partnering with us? Reach out via WhatsApp.</p>
+            <a href="https://wa.me/254115030726" target="_blank">Contact on WhatsApp</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Laansale. All Rights Reserved.
+    </div>
 </footer>
 
 <script>
-  // HAMBURGER MENU
-  function toggleMenu() {
-    document.querySelector('nav ul').classList.toggle('active');
-  }
+    let cart = [];
 
-  // CART FUNCTIONALITY
-  let cart = [];
+    const orderItems = document.getElementById('order-items');
+    const orderTotal = document.getElementById('order-total');
+    const orderNowBtn = document.getElementById('order-now-btn');
+    const checkoutForm = document.getElementById('checkout-form');
+    const placeOrderBtn = document.getElementById('place-order');
 
-  function addToCart(name, price, btn) {
-    const card = btn.closest('.product-card');
-    const qty = parseInt(card.querySelector('.qty').value);
-    const sizeSelect = card.querySelector('.size');
-    const size = sizeSelect ? sizeSelect.value : '';
-    const cartItem = cart.find(item => item.name===name && item.size===size);
-    if(cartItem) {cartItem.qty += qty;}
-    else {cart.push({name, price, qty, size});}
-    updateCart();
-  }
-
-  function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
-    let total = 0;
-    cart.forEach((item,index)=>{
-      total += item.price*item.qty;
-      const div = document.createElement('div');
-      div.classList.add('cart-item');
-      div.innerHTML = `<p>${item.name} ${item.size? '('+item.size+')':''} x${item.qty} = ${item.price*item.qty}/-</p>
-      <button onclick="removeCartItem(${index})">X</button>`;
-      cartItems.appendChild(div);
+    // Size buttons
+    document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.dataset.item;
+            const price = btn.dataset.price;
+            btn.parentNode.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelector(`.add-to-cart[data-item="${item}"]`).dataset.price = price;
+            document.getElementById(`price-${item}`).textContent = price + '/-';
+        });
     });
-    document.querySelector('.cart-total').textContent = `Total: ${total}/-`;
-  }
 
-  function removeCartItem(index) {
-    cart.splice(index,1);
-    updateCart();
-  }
+    // Quantity buttons
+    document.querySelectorAll('.quantity-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.dataset.item;
+            const quantityEl = document.querySelector(`.quantity[data-item="${item}"]`);
+            let qty = parseInt(quantityEl.textContent);
+            if(btn.classList.contains('plus')) qty++; else if(qty>0) qty--;
+            quantityEl.textContent = qty;
+        });
+    });
 
-  function scrollToCheckout(){
-    document.getElementById('checkout').scrollIntoView({behavior:'smooth'});
-  }
+    // Add to cart
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.dataset.item;
+            const price = parseInt(btn.dataset.price);
+            const quantity = parseInt(document.querySelector(`.quantity[data-item="${item}"]`).textContent);
+            if(quantity === 0) return;
 
-  function submitOrder(e){
-    e.preventDefault();
-    if(cart.length===0){alert('Cart is empty!');return;}
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    let message = `Order from ${name}%0APhone: ${phone}%0AAddress: ${address}%0A%0AItems:%0A`;
-    cart.forEach(item=>{message+=`${item.name} ${item.size? '('+item.size+')':''} x${item.qty} = ${item.price*item.qty}/-%0A`;});
-    message+=`%0ATotal: ${document.querySelector('.cart-total').textContent.replace('Total: ','')}`;
-    window.open(`https://wa.me/254700000000?text=${message}`,'_blank');
-  }
+            let sizeBtn = btn.closest('.menu-item').querySelector('.size-btn.active');
+            let size = sizeBtn ? sizeBtn.dataset.size : null;
+
+            let index = cart.findIndex(c => c.name === item && c.size === size);
+            if(index!==-1) cart[index].quantity += quantity;
+            else cart.push({name:item, price, quantity, size});
+
+            updateOrderLog();
+            document.querySelector(`.quantity[data-item="${item}"]`).textContent = '0';
+        });
+    });
+
+    function updateOrderLog(){
+        orderItems.innerHTML = '';
+        if(cart.length===0){
+            orderItems.innerHTML='<p style="text-align:center; padding:20px;">Your order is empty</p>';
+            orderTotal.textContent='0/-'; return;
+        }
+        let total=0;
+        cart.forEach(item=>{
+            let itemTotal = item.price * item.quantity;
+            total+=itemTotal;
+            let sizeInfo = item.size?` (${item.size})`:'';
+            const div = document.createElement('div');
+            div.className='order-item';
+            div.innerHTML=`<div>${formatName(item.name)}${sizeInfo} x ${item.quantity}</div><div>${itemTotal}/-</div>`;
+            orderItems.appendChild(div);
+        });
+        orderTotal.textContent = total + '/-';
+    }
+
+    function formatName(name){
+        return name.split('-').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ');
+    }
+
+    orderNowBtn.addEventListener('click', ()=>{
+        if(cart.length===0){alert('Your order is empty.'); return;}
+        checkoutForm.style.display='block';
+        checkoutForm.scrollIntoView({behavior:'smooth'});
+    });
+
+    placeOrderBtn.addEventListener('click', ()=>{
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        if(!name||!phone){alert('Please fill all required fields.'); return;}
+        let summary=`*NEW ORDER*\n\n*Name:* ${name}\n*Phone:* ${phone}\n`;
+        const dressing = document.getElementById('dressing').value;
+        if(dressing) summary+=`*Clothes Description:* ${dressing}\n`;
+        summary+='\n*Order Details:*\n';
+        cart.forEach(item=>{
+            let sizeInfo = item.size?` (${item.size})`:'';
+            summary+=`- ${formatName(item.name)}${sizeInfo} x ${item.quantity} = ${item.price*item.quantity}/-\n`;
+        });
+        summary+=`\n*Total: ${cart.reduce((t,i)=>t+i.price*i.quantity,0)}/-*\n`;
+        summary+=`*Delivery Location:* ${document.getElementById('delivery-location').value}\n`;
+        const locDetails=document.getElementById('location-details').value;
+        if(locDetails) summary+=`*Location Details:* ${locDetails}\n`;
+
+        const whatsappURL=`https://wa.me/254759534267?text=${encodeURIComponent(summary)}`;
+        window.open(whatsappURL,'_blank');
+
+        cart=[]; updateOrderLog(); checkoutForm.style.display='none';
+        document.getElementById('name').value=''; document.getElementById('phone').value='';
+        document.getElementById('dressing').value=''; document.getElementById('location-details').value='';
+        alert('Your order has been placed! Redirecting to WhatsApp...');
+    });
 </script>
 
 </body>
