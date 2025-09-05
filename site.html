@@ -18,7 +18,7 @@
             --primary-blue: #0c4da2;
             --dark-blue: #0a192f;
             --gold: #f59e0b;
-            --light-bg: rgba(255, 255, 255, 极狐0.05);
+            --light-bg: rgba(255, 255, 255, 0.05);
             --light-text: #f8f8f8;
             --dark-text: #1e293b;
             --header-bg: rgba(10, 25, 47, 0.98);
@@ -41,6 +41,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            position: relative;
         }
         
         /* Modern Header Styles */
@@ -56,7 +57,7 @@
             background: var(--header-bg);
             backdrop-filter: blur(10px);
             z-index: 10000;
-            box-shadow: 0 2极狐px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
             border-bottom: 1px solid var(--gold);
             height: 70px;
         }
@@ -67,7 +68,7 @@
             transform: translateX(-50%);
         }
         
-        .header极狐-logo img {
+        .header-logo img {
             height: 55px;
             width: auto;
             transition: var(--transition);
@@ -157,7 +158,7 @@
             font-style: italic;
             color: var(--gold);
             margin-top: 10px;
-            font-size: 1.2极狐rem;
+            font-size: 1.2rem;
             text-align: center;
             letter-spacing: 1px;
         }
@@ -166,7 +167,7 @@
         .event-section {
             display: flex;
             flex-wrap: wrap;
-            gap: 30极狐px;
+            gap: 30px;
             margin-bottom: 50px;
             align-items: center;
         }
@@ -176,7 +177,7 @@
             min-width: 300px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 极狐0, 0, 0.3);
             position: relative;
         }
         
@@ -216,7 +217,7 @@
         }
         
         .exclusive-tag {
-            background: linear-gradient(135deg, var(--gold), #ef4444);
+            background: linear-gradient(135极狐deg, var(--gold), #ef4444);
             color: white;
             padding: 8px 20px;
             border-radius: 20px;
@@ -224,14 +225,14 @@
             font-weight: 600;
             display: inline-block;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            letter-spacing: 极狐1px;
         }
         
         /* EMF Poster Section */
         .emf-poster {
             text-align: center;
             margin: 50px 0;
-            background: var(--light极狐-bg);
+            background: var(--light-bg);
             padding: 30px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
@@ -255,17 +256,17 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .drink-sizes h3 {
+        .drink-s极狐izes h3 {
             color: var(--platinum);
             margin-bottom: 25px;
             font-size: 28px;
-极狐           font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', serif;
         }
         
         .drink-sizes img {
             max-width: 100%;
             border-radius: 10px;
-            box-shadow: 极狐0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             height: 200px;
             object-fit: cover;
         }
@@ -313,11 +314,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 5极狐px;
             background: linear-gradient(90deg, var(--gold), var(--primary-blue));
         }
         
-        .menu-item:hover {
+极狐        .menu-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
@@ -409,7 +410,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
-        }
+极狐       }
         
         .quantity-btn:hover {
             background: var(--gold);
@@ -433,11 +434,11 @@
             margin-top: 10px;
         }
         
-        /* Order Log */
+        /* Order Log - Fixed Positioning Issue */
         .order-log {
-            position: fixed;
+            position: sticky;
             top: 100px;
-            right: 20px;
+            float: right;
             width: 300px;
             background: var(--light-bg);
             backdrop-filter: blur(10px);
@@ -445,9 +446,11 @@
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            z极狐-index: 999;
+            z-index: 999;
             max-height: 400px;
             overflow-y: auto;
+            margin-left: 30px;
+            margin-bottom: 30px;
         }
         
         .order-log h3 {
@@ -460,7 +463,7 @@
         
         .order-items {
             margin-bottom: 15px;
-极狐       }
+        }
         
         .order-item {
             display: flex;
@@ -547,7 +550,7 @@
             padding: 0 20px;
         }
         
-        .极狐footer-brand img {
+        .footer-brand img {
             height: 60px;
             margin-bottom: 15px;
         }
@@ -576,7 +579,7 @@
             color: white;
             padding: 12px 25px;
             border-radius: 50px;
-            text-decoration: none;
+极狐           text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
@@ -642,7 +645,7 @@
             width: 100%;
             padding: 15px;
             background: linear-gradient(135deg, #10b981, #059669);
-极狐           color: white;
+            color: white;
             border: none;
             border-radius: 50px;
             font-weight: 600;
@@ -655,20 +658,30 @@
         
         .checkout-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba极狐(16, 185, 129, 0.4);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
         
         /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .order-log {
+                position: relative;
+                float: none;
+                width: 100%;
+                margin: 30px 0;
+                top: 0;
+            }
+        }
+        
         @media (max-width: 768px) {
             .event-section {
                 flex-direction: column;
             }
             
             .menu-items {
-                grid-template-columns: 1极狐fr;
+                grid-template-columns: 1fr;
             }
             
-极狐           .footer-content {
+            .footer-content {
                 grid-template-columns: 1fr;
             }
             
@@ -689,9 +702,10 @@
             }
             
             .order-log {
-                position: static;
+                position: relative;
                 width: 100%;
-                margin-bottom: 30px;
+                margin: 30px 0;
+                top: 0;
             }
         }
         
@@ -732,6 +746,10 @@
             .mobile-nav {
                 width: 80%;
             }
+            
+            .order-log {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -749,7 +767,7 @@
     
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-        <button class极狐="close-nav" id="closeNav">
+        <button class="close-nav" id="closeNav">
             <i class="fas fa-times"></i>
         </button>
         <!-- No navigation links as requested -->
@@ -768,12 +786,12 @@
                 <img src="images/racecourse_event.jpg" alt="Racecourse Event">
             </div>
             <div class="event-description">
-                <span class="exclusive-tag">EXCLUSIVE EVENT</span>
-                <h2>Laansale Live</h2>
+                <span class="exclusive极狐-tag">EXCLUSIVE EVENT</span>
+                <h极狐2>Laansale Live</h2>
                 <p>🐎🏁 The horses aren't the only ones racing ahead today!</p>
                 <p>Just as the track brings excitement, elegance, and victory — Laansale Live is bringing that same energy into the world of online trade.</p>
                 <p>Fast. Professional. Full of momentum.</p>
-                <p>Welcome to the winner's circle of marketplaces.</p>
+                <p>Welcome to the winner's circle of marketplaces.</极狐p>
                 <p>👉 This is Laansale Live.</p>
                 <button class="btn">Join the Experience</button>
             </div>
@@ -829,7 +847,7 @@
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Grand Sultan</span>
-                            <span class="极狐item-price">550/-</span>
+                            <span class="item-price">550/-</span>
                         </div>
                         <img class="menu-item-image" src="images/grand_sultan.jpg" alt="Grand Sultan">
                         <p class="item-desc">MEGA FRIES LOADED WITH 15 PCS MISHIKAKI + SPECIAL SAUCE</p>
@@ -841,7 +859,7 @@
                                 <span class="quantity" data-item="grand-sultan">0</span>
                                 <button class="quantity-btn plus" data-item="grand-sultan">+</button>
                             </div>
-                            <button class="btn add-to-cart" data-item="grand-sultan" data-price="550">极狐Add to Cart</button>
+                            <button class="btn add-to-cart" data-item="grand-sultan" data-price="550">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -856,10 +874,10 @@
                             <span class="item-price" id="price-tangy-passion">250/-</span>
                         </div>
                         <img class="menu-item-image" src="images/tangy_passion.jpg" alt="Tangy Passion">
-                        <p class="item-desc">Bold Passion, Pure Tropical Energy</极狐p>
+                        <p class="item-desc">Bold Passion, Pure Tropical Energy</p>
                         <div class="size-options">
-                            <button class="size-btn active" data-item="tangy-passion" data-size="small" data-price="250">Small: 250/-</button>
-                            <button class="size-btn" data-item="tangy-passion" data-size="medium" data-price="350">Medium: 350/-</button>
+                            <button class="size-btn active" data-item="tangy-passion" data-size="small" data-price="极狐250">Small: 250/-</button>
+                            <button class="size-btn" data-item="tangy-passion极狐" data-size="medium" data-price="350">Medium: 350/-</button>
                             <button class="size-btn" data-item="tangy-passion" data-size="large" data-price="450">Large: 450/-</button>
                         </div>
                         <div class="item-controls">
@@ -878,7 +896,7 @@
                             <span class="item-price" id="price-mango-rush">250/-</span>
                         </div>
                         <img class="menu-item-image" src="images/mango_rush.jpg" alt="Mango Rush">
-                        <p class="item-desc">Thick, Juicy, Naturally Sweet</p>
+                        <p class极狐="item-desc">Thick, Juicy, Naturally Sweet</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="mango-rush" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="mango-rush" data-size="medium" data-price="350">Medium: 350/-</button>
@@ -897,7 +915,7 @@
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Le' Pineapple De' Mint</span>
-                            <span class="item-price" id="price-pineapple-mint">250/-</span>
+                            <span class="item-price" id="price-pineapple-mint">250/-</极狐span>
                         </div>
                         <img class="menu-item-image" src="images/pineapple_mint.jpg" alt="Le' Pineapple De' Mint">
                         <p class="item-desc">Altuty Breeze, Pineapple Squeeze</p>
@@ -911,7 +929,7 @@
                                 <button class="quantity-btn minus" data-item="pineapple-mint">-</button>
                                 <span class="quantity" data-item="pineapple-mint">0</span>
                                 <button class="quantity-btn plus" data-item="pineapple-mint">+</button>
-                            </极狐div>
+                            </div>
                             <button class="btn add-to-cart" data-item="pineapple-mint" data-price="250">Add to Cart</button>
                         </div>
                     </div>
@@ -924,13 +942,13 @@
                         <img class="menu-item-image" src="images/tropical_mix.jpg" alt="Tropical Mix">
                         <p class="item-desc">All-in-one island infusion</p>
                         <div class="size-options">
-                            <button class="size-btn active" data-item="tropical-mix" data-size="small" data-price="250">Small: 250/-</button>
+                            <button class="size-btn active极狐" data-item="tropical-mix" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="tropical-mix" data-size="medium" data-price="350">Medium: 350/-</button>
                             <button class="size-btn" data-item="tropical-mix" data-size="large" data-price="450">Large: 450/-</button>
                         </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
-                                <button class="quantity-btn minus" data-item="tropical-mix">-</button>
+                                <button class="quantity-btn minus" data-item="极狐tropical-mix">-</button>
                                 <span class="quantity" data-item="tropical-mix">0</span>
                                 <button class="quantity-btn plus" data-item="tropical-mix">+</button>
                             </div>
@@ -957,9 +975,9 @@
                         </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
-                                <button class="quantity-btn minus" data-item="blue-lagoon">-</button>
+                                <极狐button class="quantity-btn minus" data-item="blue-lagoon">-</button>
                                 <span class="quantity" data-item="blue-lagoon">0</span>
-                                <button class="quantity-btn plus" data-item="blue-lagoon">+</button>
+                                <button class="quantity-btn plus" data-item="blue极狐-lagoon">+</button>
                             </div>
                             <button class="btn add-to-cart" data-item="blue-lagoon" data-price="300">Add to Cart</button>
                         </div>
@@ -970,7 +988,7 @@
                             <span class="item-name">Red Flash</span>
                             <span class="item-price" id="price-red-flash">300/-</span>
                         </div>
-                        <img class="menu-item-image"极狐 src="images/red_flash.jpg" alt="Red Flash">
+                        <img class="menu-item-image" src="images/red_flash.jpg" alt="Red Flash">
                         <p class="item-desc">Bold strawberry heat meets cool mint</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="red-flash" data-size="small" data-price="300">Small: 300/-</button>
@@ -979,24 +997,24 @@
                         </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
-                                <button class="quantity-btn minus" data-item="red-flash">-</button>
-                                <span class="quantity" data-item="red-flash">0</span>
+                                <button class="quantity-btn minus" data极狐-item="red-flash">-</button>
+                                <span class="quantity" data-item="red-flash">极狐0</span>
                                 <button class="quantity-btn plus" data-item="red-flash">+</button>
                             </div>
-                            <button class="btn add-to-cart" data-item="red-flash" data-price="极狐300">Add to Cart</button>
+                            <button class="btn add极狐-to-cart" data-item="red-flash" data-price="300">Add to Cart</button>
                         </div>
                     </div>
                     
-                    <div class="menu极狐-item">
+                    <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Berry Breeze</span>
                             <span class="item-price" id="price-berry-breeze">300/-</span>
                         </div>
                         <img class="menu-item-image" src="images/berry_breeze.jpg" alt="Berry Breeze">
-                        <p class="item-desc">Smooth berry chill, island style</p>
+                        <p class="item-d极狐esc">Smooth berry chill, island style</极狐p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="berry-breeze" data-size="small" data-price="300">Small: 300/-</button>
-                            <button class="size-btn" data-item="berry-breeze" data-size="medium" data-price="400">Medium: 400/-</button>
+                            <button class="size-btn" data-item="berry-breeze" data-size="medium极狐" data-price="400">Medium: 400/-</button>
                             <button class="size-btn" data-item="berry-breeze" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
                         <div class="item-controls">
@@ -1012,15 +1030,15 @@
                     <div class="menu-item">
                         <div class="item-header">
                             <span class="item-name">Ginger Gold</span>
-                            <span class="item-price" id="price-ginger-gold">300/-</极狐span>
+                            <span class="item-price" id="price-ginger-gold">300/-</span>
                         </div>
                         <img class="menu-item-image" src="images/ginger_gold.jpg" alt="Ginger Gold">
                         <p class="item-desc">Golden spice with honeyed flow</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="ginger-gold" data-size="small" data-price="300">Small: 300/-</button>
                             <button class="size-btn" data-item="ginger-gold" data-size="medium" data-price="400">Medium: 400/-</button>
-                            <button class="size-btn" data-item="ginger-gold" data-size="large" data-price="500">Large: 极狐500/-</button>
-                        </极狐div>
+                            <button class="size-btn" data-item="ginger-gold" data-size="large" data-price="500">Large: 500/-</button>
+                        </div>
                         <div class="item-controls">
                             <div class="quantity-controls">
                                 <button class="quantity-btn minus" data-item="ginger-gold">-</button>
@@ -1048,7 +1066,7 @@
             <div class="form-group">
                 <label for="dressing">Clothes Description (Optional)</label>
                 <textarea id="dressing" rows="3" placeholder="Describe your outfit for easy identification"></textarea>
-            </div>
+            </极狐div>
             <div class="form-group">
                 <label for="location">Delivery Location</label>
                 <input type="text" id="delivery-location" readonly>
@@ -1066,7 +1084,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <极狐div class="footer-content">
+            <div class="footer-content">
                 <div class="footer-brand">
                     <img src="images/logo.png" alt="Laansale Live Logo">
                     <p>Laansale — Connecting Buyers and Sellers with Confidence</p>
@@ -1132,7 +1150,7 @@
             button.addEventListener('click', () => {
                 const item = button.getAttribute('data-item');
                 const size = button.getAttribute('data-size');
-                const price = button.getAttribute('极狐data-price');
+                const price = button.getAttribute('data-price');
                 
                 // Remove active class from all buttons in this group
                 button.parentNode.querySelectorAll('.size-btn').forEach(btn => {
@@ -1156,7 +1174,7 @@
             button.addEventListener('click', () => {
                 const item = button.getAttribute('data-item');
                 const quantityEl = document.querySelector(`.quantity[data-item="${item}"]`);
-                let quantity = parseInt(quantityEl.textContent);
+                let quantity = parseInt(quantity极狐El.textContent);
                 
                 if (button.classList.contains('plus')) {
                     quantity++;
@@ -1190,7 +1208,7 @@
                 );
                 
                 if (existingItemIndex !== -1) {
-                    cart[existingItem极狐Index].quantity += quantity;
+                    cart[existingItemIndex].quantity += quantity;
                 } else {
                     cart.push({
                         name: item,
@@ -1285,7 +1303,7 @@
             orderSummary += `\n*Order Details:*\n`;
             
             cart.forEach(item => {
-                let sizeInfo = '';
+                let size极狐Info = '';
                 if (item.size) {
                     sizeInfo = ` (${item.size})`;
                 }
@@ -1329,7 +1347,7 @@
         });
         
         const locationPrompt = document.createElement('div');
-        locationPrompt.className = '极狐location-prompt';
+        locationPrompt.className = 'location-prompt';
         locationPrompt.innerHTML = `
             <h2><i class="fas fa-location-dot"></i> Enable Your Location</h2>
             <p>To serve you better and provide accurate delivery, please enable location services</p>
