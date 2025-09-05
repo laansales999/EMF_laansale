@@ -79,6 +79,39 @@
             transform: translateX(-50%) scale(1.05);
         }
         
+        .desktop-nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .desktop-nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .desktop-nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        
+        .desktop-nav a:hover {
+            color: var(--gold);
+        }
+        
+        .desktop-nav a:hover:after {
+            width: 100%;
+        }
+        
         .nav-toggle {
             display: none;
             background: none;
@@ -177,7 +210,7 @@
             min-width: 300px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 极狐0, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             position: relative;
         }
         
@@ -236,7 +269,7 @@
             padding: 30px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 极狐0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .emf-poster img {
@@ -251,7 +284,7 @@
             margin: 50px 0;
             padding: 30px;
             background: var(--light-bg);
-            border-radius: 10极狐px;
+            border-radius: 10px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -371,7 +404,7 @@
             flex-wrap: wrap;
         }
         
-极狐        .size-btn {
+        .size-btn {
             padding: 8px 15px;
             border-radius: 20px;
             border: 1px solid var(--primary-blue);
@@ -427,7 +460,7 @@
         .limited-edition {
             background: linear-gradient(135deg, var(--gold), #ef4444);
             color: white;
-            padding: 5极狐px 12px;
+            padding: 5px 12px;
             border-radius: 15px;
             font-size: 12px;
             font-weight: 600;
@@ -630,12 +663,12 @@
             display: inline-block;
             margin-top: 15px;
             letter-spacing: 0.5px;
-            box-shadow: 0 4极狐x 15px rgba(245, 158, 11, 0.3);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
             text-decoration: none;
         }
         
         .btn:hover {
-            background: linear-gradient(135deg, #d977极狐06, var(--gold));
+            background: linear-gradient(135deg, #d97706, var(--gold));
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
         }
@@ -701,6 +734,10 @@
                 height: 38px;
             }
             
+            .desktop-nav {
+                display: none;
+            }
+            
             .nav-toggle {
                 display: block;
             }
@@ -759,11 +796,18 @@
 <body>
     <!-- Modern Header -->
     <header class="modern-header">
+        <nav class="desktop-nav">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
         <div class="header-logo">
-            <img src="https://placehold.co/200x60/1a4b8c/white?text=Laansale+Live" alt="Laansale Live Logo">
+            <img src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/laansale%20Logo.jpg" alt="Laansale Live Logo">
         </div>
         
-        <button class极狐="nav-toggle" id="navToggle">
+        <button class="nav-toggle" id="navToggle">
             <i class="fas fa-bars"></i>
         </button>
     </header>
@@ -771,9 +815,13 @@
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
         <button class="close-nav" id="closeNav">
-            <极狐i class="fas fa-times"></i>
+            <i class="fas fa-times"></i>
         </button>
-        <!-- No navigation links as requested -->
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/254115030726" target="_blank">Order via WhatsApp</a>
     </div>
     
     <!-- Overlay -->
@@ -799,7 +847,7 @@
         <!-- Event Section -->
         <section class="event-section">
             <div class="event-image">
-                <img src="https://placehold.co/600x400/1a4b8c/white?text=Racecourse+Event" alt="Racecourse Event">
+                <img src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Racecource%20Poster.jpg" alt="Racecourse Event">
             </div>
             <div class="event-description">
                 <span class="exclusive-tag">EXCLUSIVE EVENT</span>
@@ -807,7 +855,7 @@
                 <p>🐎🏁 The horses aren't the only ones racing ahead today!</p>
                 <p>Just as the track brings excitement, elegance, and victory — Laansale Live is bringing that same energy into the world of online trade.</p>
                 <p>Fast. Professional. Full of momentum.</p>
-                <p>Welcome to the winner's circle of marketplaces.</极狐p>
+                <p>Welcome to the winner's circle of marketplaces.</p>
                 <p>👉 This is Laansale Live.</p>
                 <button class="btn">Join the Experience</button>
             </div>
@@ -815,13 +863,13 @@
 
         <!-- EMF Poster Section -->
         <section class="emf-poster">
-            <img src="https://placehold.co/800x400/1a4b8c/white?text=Exquisite+Madiwa+Flavors" alt="Exquisite Madiwa Flavors">
+            <img src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/EMG%20poster.jpg" alt="Exquisite Madiwa Flavors">
         </section>
 
         <!-- Drink Sizes Reference -->
         <section class="drink-sizes">
             <h3>Our Premium Drink Sizes</h3>
-            <img src="https://placehold.co/600x300/1a4b8c/white?text=Drink+Sizes+Comparison" alt="Premium Drink Size Comparison">
+            <img src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/drinking%20cups.jpg" alt="Premium Drink Size Comparison">
         </section>
 
         <!-- Menu Section -->
@@ -834,7 +882,7 @@
                             <span class="item-name">Classic Crunch</span>
                             <span class="item-price">450/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Classic+Crunch" alt="Classic Crunch">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Classic%20crunch.jpg" alt="Classic Crunch">
                         <p class="item-desc">FRIES + 10 PCS MISHIKAKI + CHEF'S SIGNATURE SAUCE</p>
                         <span class="limited-edition">Limited Edition</span>
                         <div class="item-controls">
@@ -842,7 +890,7 @@
                                 <button class="quantity-btn minus" data-item="classic-crunch">-</button>
                                 <span class="quantity" data-item="classic-crunch">0</span>
                                 <button class="quantity-btn plus" data-item="classic-crunch">+</button>
-                            </极狐div>
+                            </div>
                             <button class="btn add-to-cart" data-item="classic-crunch" data-price="450">Add to Cart</button>
                         </div>
                     </div>
@@ -852,7 +900,7 @@
                             <span class="item-name">Grand Sultan</span>
                             <span class="item-price">550/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Grand+Sultan" alt="Grand Sultan">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Grand%20Sultan.jpg" alt="Grand Sultan">
                         <p class="item-desc">MEGA FRIES LOADED WITH 15 PCS MISHIKAKI + SPECIAL SAUCE</p>
                         <p class="item-desc">EXTRA MISHIKAKI @100/- PER SKEWER</p>
                         <span class="limited-edition">Limited Edition</span>
@@ -876,8 +924,8 @@
                             <span class="item-name">Tangy Passion</span>
                             <span class="item-price" id="price-tangy-passion">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Tangy+Passion" alt="Tangy Passion">
-                        <p class极狐="item-desc">Bold Passion, Pure Tropical Energy</p>
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Tangy%20Passion.jpg" alt="Tangy Passion">
+                        <p class="item-desc">Bold Passion, Pure Tropical Energy</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="tangy-passion" data-size="small" data-price="250">Small: 250/-</button>
                             <button class="size-btn" data-item="tangy-passion" data-size="medium" data-price="350">Medium: 350/-</button>
@@ -889,7 +937,7 @@
                                 <span class="quantity" data-item="tangy-passion">0</span>
                                 <button class="quantity-btn plus" data-item="tangy-passion">+</button>
                             </div>
-                            <button class="btn add-to-cart" data-item="tangy-passion" data-price极狐="250">Add to Cart</button>
+                            <button class="btn add-to-cart" data-item="tangy-passion" data-price="250">Add to Cart</button>
                         </div>
                     </div>
                     
@@ -898,7 +946,7 @@
                             <span class="item-name">Mango Rush</span>
                             <span class="item-price" id="price-mango-rush">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Mango+Rush" alt="Mango Rush">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Mango%20Rush.jpg" alt="Mango Rush">
                         <p class="item-desc">Thick, Juicy, Naturally Sweet</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="mango-rush" data-size="small" data-price="250">Small: 250/-</button>
@@ -920,7 +968,7 @@
                             <span class="item-name">Le' Pineapple De' Mint</span>
                             <span class="item-price" id="price-pineapple-mint">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Le'+Pineapple+De'+Mint" alt="Le' Pineapple De' Mint">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Le'%20Pineapple%20De'Mint.jpg" alt="Le' Pineapple De' Mint">
                         <p class="item-desc">Altuty Breeze, Pineapple Squeeze</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="pineapple-mint" data-size="small" data-price="250">Small: 250/-</button>
@@ -939,10 +987,10 @@
                     
                     <div class="menu-item">
                         <div class="item-header">
-                            <span class="item-name">Tropical Mix</极狐span>
-                            <span class="item-price" id="price-tropical-m极狐ix">250/-</span>
+                            <span class="item-name">Tropical Mix</span>
+                            <span class="item-price" id="price-tropical-mix">250/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Tropical+Mix" alt="Tropical Mix">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Tropical%20Mix.jpg" alt="Tropical Mix">
                         <p class="item-desc">All-in-one island infusion</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="tropical-mix" data-size="small" data-price="250">Small: 250/-</button>
@@ -969,7 +1017,7 @@
                             <span class="item-name">Blue Lagoon</span>
                             <span class="item-price" id="price-blue-lagoon">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/极狐1a4b8c/white?text=Blue+Lagoon" alt="Blue Lagoon">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Blue%20Lagoon.jpg" alt="Blue Lagoon">
                         <p class="item-desc">Tropical Citrus Wave, Blue Ocean</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="blue-lagoon" data-size="small" data-price="300">Small: 300/-</button>
@@ -980,7 +1028,7 @@
                             <div class="quantity-controls">
                                 <button class="quantity-btn minus" data-item="blue-lagoon">-</button>
                                 <span class="quantity" data-item="blue-lagoon">0</span>
-                                <button class="quantity-btn plus" data-item="blue-lagoon">+</极狐button>
+                                <button class="quantity-btn plus" data-item="blue-lagoon">+</button>
                             </div>
                             <button class="btn add-to-cart" data-item="blue-lagoon" data-price="300">Add to Cart</button>
                         </div>
@@ -991,10 +1039,10 @@
                             <span class="item-name">Red Flash</span>
                             <span class="item-price" id="price-red-flash">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Red+Flash" alt="Red Flash">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Red%20flash.jpg" alt="Red Flash">
                         <p class="item-desc">Bold strawberry heat meets cool mint</p>
                         <div class="size-options">
-                            <button class="size-btn active" data-item="red-flash极狐" data-size="small" data-price="300">Small: 300/-</button>
+                            <button class="size-btn active" data-item="red-flash" data-size="small" data-price="300">Small: 300/-</button>
                             <button class="size-btn" data-item="red-flash" data-size="medium" data-price="400">Medium: 400/-</button>
                             <button class="size-btn" data-item="red-flash" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
@@ -1013,7 +1061,7 @@
                             <span class="item-name">Berry Breeze</span>
                             <span class="item-price" id="price-berry-breeze">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Berry+Breeze" alt="Berry Breeze">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Berry%20Breeze.jpg" alt="Berry Breeze">
                         <p class="item-desc">Smooth berry chill, island style</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="berry-breeze" data-size="small" data-price="300">Small: 300/-</button>
@@ -1021,7 +1069,7 @@
                             <button class="size-btn" data-item="berry-breeze" data-size="large" data-price="500">Large: 500/-</button>
                         </div>
                         <div class="item-controls">
-                            <div class="quantity-control极狐s">
+                            <div class="quantity-controls">
                                 <button class="quantity-btn minus" data-item="berry-breeze">-</button>
                                 <span class="quantity" data-item="berry-breeze">0</span>
                                 <button class="quantity-btn plus" data-item="berry-breeze">+</button>
@@ -1035,7 +1083,7 @@
                             <span class="item-name">Ginger Gold</span>
                             <span class="item-price" id="price-ginger-gold">300/-</span>
                         </div>
-                        <img class="menu-item-image" src="https://placehold.co/600x400/1a4b8c/white?text=Ginger+Gold" alt="Ginger Gold">
+                        <img class="menu-item-image" src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/Ginger%20Gold.jpg" alt="Ginger Gold">
                         <p class="item-desc">Golden spice with honeyed flow</p>
                         <div class="size-options">
                             <button class="size-btn active" data-item="ginger-gold" data-size="small" data-price="300">Small: 300/-</button>
@@ -1074,7 +1122,7 @@
                 <label for="location">Delivery Location</label>
                 <input type="text" id="delivery-location" readonly>
                 <small>If the location is not accurate, please describe your location below</small>
-            </极狐div>
+            </div>
             <div class="form-group">
                 <label for="location-details">Location Details (If needed)</label>
                 <textarea id="location-details" rows="2"></textarea>
@@ -1089,11 +1137,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="https://placehold.co/200x60/1a4b8c/white?text=极狐Laansale+Live" alt="Laansale Live Logo">
+                    <img src="https://raw.githubusercontent.com/laansales999/EMF_laansale/main/laansale%20Logo.jpg" alt="Laansale Live Logo">
                     <p>Laansale — Connecting Buyers and Sellers with Confidence</p>
                     <div class="social-icons">
                         <a href="https://wa.me/254115030726" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></极狐i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-about">
@@ -1234,7 +1282,7 @@
             orderItems.innerHTML = '';
             
             if (cart.length === 0) {
-                orderItems.innerHTML = '<p style="text-align: center; padding: 20极狐px;">Your order is empty</p>';
+                orderItems.innerHTML = '<p style="text-align: center; padding: 20px;">Your order is empty</p>';
                 orderTotal.textContent = '0/-';
                 return;
             }
